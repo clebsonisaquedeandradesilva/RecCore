@@ -1,0 +1,172 @@
+[
+  {
+    "source": "packages/hono-helpers/src/middleware/withOnError.ts",
+    "line": 20,
+    "note": "// TODO: Capture to Sentry"
+  },
+  {
+    "source": "packages/hono-helpers/src/middleware/withOnError.ts",
+    "line": 30,
+    "note": "// TODO: Capture to Sentry"
+  },
+  {
+    "source": "apps/rooms/src/openapi.ts",
+    "line": 891,
+    "note": "* entries. Stubbed empty; the element shape is unknown until something stores one."
+  },
+  {
+    "source": "apps/rooms/src/openapi.ts",
+    "line": 898,
+    "note": "* `GET /showcase/{playerId}` — the rooms a player showcases on their profile. Stubbed"
+  },
+  {
+    "source": "apps/rooms/src/rooms.app.ts",
+    "line": 2403,
+    "note": "'actually happen, not a stub.',"
+  },
+  {
+    "source": "apps/platformnotifications/src/platformnotifications.app.ts",
+    "line": 87,
+    "note": "// STUB. Nothing here defines categories or stores a preference against one, so this is"
+  },
+  {
+    "source": "apps/econ/src/econ.app.ts",
+    "line": 2129,
+    "note": "* a static catalog served verbatim or an empty-list stub. `auth` adds the bearer"
+  },
+  {
+    "source": "apps/econ/src/econ.app.ts",
+    "line": 2437,
+    "note": "// posted. Stubbed: with no objectives store yet we persist nothing, echo the group"
+  },
+  {
+    "source": "apps/econ/src/econ.app.ts",
+    "line": 2446,
+    "note": "'Stubbed: with no objectives store we persist nothing and never complete a group.',"
+  },
+  {
+    "source": "apps/econ/src/econ.app.ts",
+    "line": 2548,
+    "note": "// Mark a checklist row done. [Authorize]. Stubbed: there is no objective-progress"
+  },
+  {
+    "source": "apps/econ/src/econ.app.ts",
+    "line": 2560,
+    "note": "'Marks a NUX checklist row done. Stubbed: nothing records the completion (no ' +"
+  },
+  {
+    "source": "apps/econ/src/econ.app.ts",
+    "line": 2900,
+    "note": "// Room consumables/currencies for a given room. Stubbed as empty lists so the"
+  },
+  {
+    "source": "apps/econ/src/econ.app.ts",
+    "line": 4021,
+    "note": "200: json(JsonArray, 'The rewards granted — always [] while the payload is stubbed'),"
+  },
+  {
+    "source": "apps/econ/src/openapi.ts",
+    "line": 172,
+    "note": "* buyItem answers with. `Balance` is the CHANGE applied, so a stubbed (ungranted)"
+  },
+  {
+    "source": "apps/econ/src/openapi.ts",
+    "line": 177,
+    "note": "Balance: z.int().describe('The change applied — 0 while completion is stubbed'),"
+  },
+  {
+    "source": "apps/auth/src/auth.app.ts",
+    "line": 461,
+    "note": "'EXCEPT the exact identity `1/1` (Oculus, id `1`), which is stubbed for SIDELOADED',"
+  },
+  {
+    "source": "apps/auth/src/meta-nonce.ts",
+    "line": 162,
+    "note": "// Resolved per call, not at module load, so a test's stubbed global is honoured."
+  },
+  {
+    "source": "apps/auth/src/openapi.ts",
+    "line": 98,
+    "note": "* The stubbed Oculus cached login served to sideloaded APKs. Same shape as `CachedLogin`,"
+  },
+  {
+    "source": "apps/api/src/api.app.ts",
+    "line": 23,
+    "note": "* JSON files are stubbed here — no bindings yet."
+  },
+  {
+    "source": "apps/api/src/api.app.ts",
+    "line": 26,
+    "note": "* Placeholder responses for file-backed endpoints are marked `TODO: hydrate`."
+  },
+  {
+    "source": "apps/api/src/api.app.ts",
+    "line": 89,
+    "note": "'client calls that host and the copy here is a stub, which each route says.',"
+  },
+  {
+    "source": "apps/api/src/openapi.ts",
+    "line": 93,
+    "note": "/** An opaque JSON object (a static config blob, a stub, …). */"
+  },
+  {
+    "source": "apps/api/src/openapi.ts",
+    "line": 1292,
+    "note": "* are on the DTO but unset by that stub, so they carry their C# defaults (false / null)."
+  },
+  {
+    "source": "apps/api/src/routes/avatar.ts",
+    "line": 351,
+    "note": "Id: 0, // TODO: real id once gifts are persisted"
+  },
+  {
+    "source": "apps/api/src/routes/avatar.ts",
+    "line": 802,
+    "note": "// nothing at all when this doesn't answer. It stubbed out `[]` while nothing stored custom"
+  },
+  {
+    "source": "apps/api/src/routes/gameplay.ts",
+    "line": 167,
+    "note": "// Keepsakes (room mementos). Stubbed empty."
+  },
+  {
+    "source": "apps/api/src/routes/gameplay.ts",
+    "line": 267,
+    "note": ") // TODO: hydrate from JSON/announcements.json"
+  },
+  {
+    "source": "apps/api/src/routes/images.ts",
+    "line": 193,
+    "note": ") // TODO: hydrate from JSON/namedimages.json"
+  },
+  {
+    "source": "apps/api/src/routes/inventory.ts",
+    "line": 44,
+    "note": "return c.json([]) // TODO: query ConsumableItems"
+  },
+  {
+    "source": "apps/api/src/routes/moderation.ts",
+    "line": 334,
+    "note": "'`TimeoutStartedAt` are on the DTO but unset by that stub, so they carry their ' +"
+  },
+  {
+    "source": "apps/api/src/routes/progression.ts",
+    "line": 471,
+    "note": "await parseFormIds(c) // TODO: query PlayerProgressions for these ids"
+  },
+  {
+    "source": "apps/api/src/routes/progression.ts",
+    "line": 486,
+    "note": "await parseFormIds(c) // TODO: query PlayerProgressions for these ids"
+  },
+  {
+    "source": "apps/api/src/routes/progression.ts",
+    "line": 518,
+    "note": "await parseFormIds(c) // TODO: query PlayerProgressions for these ids"
+  },
+  {
+    "source": "apps/accounts/src/accounts.app.ts",
+    "line": 406,
+    "note": "// TODO: also create a dorm Room/SubRoom for the new account."
+  }
+]

@@ -1,0 +1,33 @@
+export default {
+  "FeaturedPlayer": {
+    "Id": 1,
+    "TitleOverride": "",
+    "UrlOverride": null
+  },
+  "FeaturedRoomGroup": {
+    "FeaturedRoomGroupId": 2,
+    "Name": "Featured Rooms",
+    "Rooms": [
+    ]
+  },
+  "CurrentAnnouncement": {
+    "Message": "Server powered by RecFlare",
+    "MoreInfoUrl": "https://recflare.net"
+  },
+  "InstagramImages": [
+    {
+      "ImageName": "test.jpg",
+      "ImageUrl": "https://github.com/djdevin/recflare"
+    }
+  ],
+  "Videos": [
+    {
+      "BlobName": "something.mp4",
+      "Title": "test",
+      "Description": "test description",
+      "ThumbnailBlobName": "something.jpg",
+      "SourceUrl": "https://www.youtube.com"
+    }
+  ]
+}
+;

@@ -1,0 +1,12 @@
+import test from 'node:test';import assert from 'node:assert/strict';import {spawn} from 'node:child_process';import {mkdtempSync,rmSync} from 'node:fs';import os from 'node:os';import path from 'node:path';
+test('native HTTP and SignalR websocket handshake',async()=>{
+ const dir=mkdtempSync(path.join(os.tmpdir(),'recflare-ws-'));const port=19000+Math.floor(Math.random()*1000);const base=`http://127.0.0.1:${port}`;
+ const child=spawn(process.execPath,['src/server.js'],{env:{...process.env,DATA_DIR:dir,PORT:String(port),JWT_SECRET:'websocket-test-secret-more-than-32-characters',PUBLIC_BASE_URL:base,MAX_ACCOUNTS_PER_IP:'0'},stdio:['ignore','pipe','pipe']});let logs='';child.stdout.on('data',b=>logs+=b);child.stderr.on('data',b=>logs+=b);
+ try{let ok=false;for(let n=0;n<100;n++){try{if((await fetch(base+'/healthz')).ok){ok=true;break;}}catch{}await new Promise(r=>setTimeout(r,100));}assert.ok(ok,logs);
+ let r=await fetch(base+'/auth/connect/token',{method:'POST',headers:{'content-type':'application/x-www-form-urlencoded'},body:'grant_type=create_account&password=websocket1234'});assert.equal(r.status,200,await r.clone().text());const token=(await r.json()).access_token;
+ const negotiate=await (await fetch(base+'/notify/hub/v1/negotiate',{method:'POST'})).json();const ws=new WebSocket(base.replace('http:','ws:')+'/notify/hub/v1?id='+negotiate.connectionId+'&access_token='+encodeURIComponent(token));
+ await new Promise((resolve,reject)=>{const timer=setTimeout(()=>reject(Error('WS open timeout\n'+logs)),5000);ws.addEventListener('open',()=>{clearTimeout(timer);resolve();},{once:true});ws.addEventListener('error',reject,{once:true});});
+ const message=new Promise((resolve,reject)=>{const timer=setTimeout(()=>reject(Error('SignalR handshake timeout')),5000);ws.addEventListener('message',e=>{clearTimeout(timer);resolve(e.data);},{once:true});});ws.send('{"protocol":"json","version":1}\u001e');assert.equal(await message,'{}\u001e');
+ const reply=new Promise((resolve,reject)=>{const timer=setTimeout(()=>reject(Error('Subscription timeout')),5000);ws.addEventListener('message',e=>{if(String(e.data).includes('"type":3')){clearTimeout(timer);resolve(e.data);}});});ws.send('{"type":1,"target":"SubscribeToPlayers","invocationId":"1","arguments":[[1]]}\u001e');assert.ok((await reply).includes('"type":3'));ws.close();
+ }finally{child.kill('SIGTERM');await new Promise(r=>{child.once('exit',r);setTimeout(()=>{child.kill('SIGKILL');r();},3000).unref();});rmSync(dir,{recursive:true,force:true});}
+});

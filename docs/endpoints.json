@@ -1,0 +1,4130 @@
+[
+  {
+    "service": "accounts",
+    "method": "GET",
+    "path": "/",
+    "url": "/accounts/",
+    "summary": "Health check",
+    "documentation": false
+  },
+  {
+    "service": "accounts",
+    "method": "GET",
+    "path": "/emojiConfig/whitelistedEmojis",
+    "url": "/accounts/emojiConfig/whitelistedEmojis",
+    "summary": "Emoji a player may use as their displayEmoji",
+    "documentation": false
+  },
+  {
+    "service": "accounts",
+    "method": "GET",
+    "path": "/account/me",
+    "url": "/accounts/account/me",
+    "summary": "The caller’s own account",
+    "documentation": false
+  },
+  {
+    "service": "accounts",
+    "method": "GET",
+    "path": "/account/search",
+    "url": "/accounts/account/search",
+    "summary": "Prefix-search accounts by username",
+    "documentation": false
+  },
+  {
+    "service": "accounts",
+    "method": "GET",
+    "path": "/account/bulk",
+    "url": "/accounts/account/bulk",
+    "summary": "Look up many accounts by id",
+    "documentation": false
+  },
+  {
+    "service": "accounts",
+    "method": "GET",
+    "path": "/account/:id/bio",
+    "url": "/accounts/account/:id/bio",
+    "summary": "A player’s bio",
+    "documentation": false
+  },
+  {
+    "service": "accounts",
+    "method": "GET",
+    "path": "/account/:id",
+    "url": "/accounts/account/:id",
+    "summary": "A single public account",
+    "documentation": false
+  },
+  {
+    "service": "accounts",
+    "method": "POST",
+    "path": "/account/create",
+    "url": "/accounts/account/create",
+    "summary": "Create an account",
+    "documentation": false
+  },
+  {
+    "service": "accounts",
+    "method": "GET",
+    "path": "/parentalcontrol/me",
+    "url": "/accounts/parentalcontrol/me",
+    "summary": "The caller’s parental-control flags",
+    "documentation": false
+  },
+  {
+    "service": "accounts",
+    "method": "GET",
+    "path": "/accountprivacysettings/:id{[0-9]+}",
+    "url": "/accounts/accountprivacysettings/:id{[0-9]+}",
+    "summary": "An account’s privacy settings",
+    "documentation": false
+  },
+  {
+    "service": "accounts",
+    "method": "PUT",
+    "path": "/account/me/displayname",
+    "url": "/accounts/account/me/displayname",
+    "summary": "Set display name",
+    "documentation": false
+  },
+  {
+    "service": "accounts",
+    "method": "PUT",
+    "path": "/account/me/username",
+    "url": "/accounts/account/me/username",
+    "summary": "Change username",
+    "documentation": false
+  },
+  {
+    "service": "accounts",
+    "method": "POST",
+    "path": "/account/me/email",
+    "url": "/accounts/account/me/email",
+    "summary": "Set email",
+    "documentation": false
+  },
+  {
+    "service": "accounts",
+    "method": "POST",
+    "path": "/account/me/phone",
+    "url": "/accounts/account/me/phone",
+    "summary": "Set phone number",
+    "documentation": false
+  },
+  {
+    "service": "accounts",
+    "method": "PUT",
+    "path": "/account/me/identityflags",
+    "url": "/accounts/account/me/identityflags",
+    "summary": "Set identity flags",
+    "documentation": false
+  },
+  {
+    "service": "accounts",
+    "method": "PUT",
+    "path": "/account/me/personalpronouns",
+    "url": "/accounts/account/me/personalpronouns",
+    "summary": "Set personal pronouns",
+    "documentation": false
+  },
+  {
+    "service": "accounts",
+    "method": "PUT",
+    "path": "/account/me/bio",
+    "url": "/accounts/account/me/bio",
+    "summary": "Set bio",
+    "documentation": false
+  },
+  {
+    "service": "accounts",
+    "method": "PUT",
+    "path": "/account/me/emoji",
+    "url": "/accounts/account/me/emoji",
+    "summary": "Set display emoji",
+    "documentation": false
+  },
+  {
+    "service": "accounts",
+    "method": "PUT",
+    "path": "/account/me/bannerimage",
+    "url": "/accounts/account/me/bannerimage",
+    "summary": "Set profile banner image",
+    "documentation": false
+  },
+  {
+    "service": "accounts",
+    "method": "PUT",
+    "path": "/account/me/profileimage",
+    "url": "/accounts/account/me/profileimage",
+    "summary": "Set profile image",
+    "documentation": false
+  },
+  {
+    "service": "accounts",
+    "method": "GET",
+    "path": "/openapi.json",
+    "url": "/accounts/openapi.json",
+    "summary": "",
+    "documentation": true
+  },
+  {
+    "service": "ai",
+    "method": "GET",
+    "path": "/",
+    "url": "/ai/",
+    "summary": "Health check",
+    "documentation": false
+  },
+  {
+    "service": "ai",
+    "method": "GET",
+    "path": "/gameai/user/access",
+    "url": "/ai/gameai/user/access",
+    "summary": "May the caller use Game AI here?",
+    "documentation": false
+  },
+  {
+    "service": "ai",
+    "method": "GET",
+    "path": "/gameai/room/:roomId{[0-9]+}/spendsummary",
+    "url": "/ai/gameai/room/:roomId{[0-9]+}/spendsummary",
+    "summary": "A room’s Game AI spend summary",
+    "documentation": false
+  },
+  {
+    "service": "ai",
+    "method": "GET",
+    "path": "/roomieai/user/access",
+    "url": "/ai/roomieai/user/access",
+    "summary": "The caller’s Roomie AI energy budget",
+    "documentation": false
+  },
+  {
+    "service": "ai",
+    "method": "GET",
+    "path": "/roomieai/user/facts",
+    "url": "/ai/roomieai/user/facts",
+    "summary": "What Roomie knows about the caller",
+    "documentation": false
+  },
+  {
+    "service": "ai",
+    "method": "GET",
+    "path": "/makerai/user/access",
+    "url": "/ai/makerai/user/access",
+    "summary": "May the caller use Maker AI?",
+    "documentation": false
+  },
+  {
+    "service": "ai",
+    "method": "GET",
+    "path": "/makerai/user/balances",
+    "url": "/ai/makerai/user/balances",
+    "summary": "The caller’s Maker AI usage balances",
+    "documentation": false
+  },
+  {
+    "service": "ai",
+    "method": "POST",
+    "path": "/realtime-session/create",
+    "url": "/ai/realtime-session/create",
+    "summary": "Open a realtime AI session",
+    "documentation": false
+  },
+  {
+    "service": "ai",
+    "method": "GET",
+    "path": "/openapi.json",
+    "url": "/ai/openapi.json",
+    "summary": "",
+    "documentation": true
+  },
+  {
+    "service": "api",
+    "method": "GET",
+    "path": "/api/config/v1/amplitude",
+    "url": "/api/api/config/v1/amplitude",
+    "summary": "Analytics keys",
+    "documentation": false
+  },
+  {
+    "service": "api",
+    "method": "GET",
+    "path": "/api/config/v1/azurespeech",
+    "url": "/api/api/config/v1/azurespeech",
+    "summary": "Speech-to-text config",
+    "documentation": false
+  },
+  {
+    "service": "api",
+    "method": "GET",
+    "path": "/api/config/v1/backtrace",
+    "url": "/api/api/config/v1/backtrace",
+    "summary": "Crash reporter config",
+    "documentation": false
+  },
+  {
+    "service": "api",
+    "method": "GET",
+    "path": "/api/config/v2",
+    "url": "/api/api/config/v2",
+    "summary": "The main client config blob",
+    "documentation": false
+  },
+  {
+    "service": "api",
+    "method": "GET",
+    "path": "/api/versioncheck/v4",
+    "url": "/api/api/versioncheck/v4",
+    "summary": "Client version check",
+    "documentation": false
+  },
+  {
+    "service": "api",
+    "method": "GET",
+    "path": "/api/versioncheck/islandedversions",
+    "url": "/api/api/versioncheck/islandedversions",
+    "summary": "Islanded client builds",
+    "documentation": false
+  },
+  {
+    "service": "api",
+    "method": "GET",
+    "path": "/api/gameconfigs/v1/all",
+    "url": "/api/api/gameconfigs/v1/all",
+    "summary": "Per-game configuration",
+    "documentation": false
+  },
+  {
+    "service": "api",
+    "method": "POST",
+    "path": "/statsigUserProperties",
+    "url": "/api/statsigUserProperties",
+    "summary": "Statsig user properties",
+    "documentation": false
+  },
+  {
+    "service": "api",
+    "method": "GET",
+    "path": "/voice/config",
+    "url": "/api/voice/config",
+    "summary": "Voice chat config",
+    "documentation": false
+  },
+  {
+    "service": "api",
+    "method": "GET",
+    "path": "/api/relationships/v2/get",
+    "url": "/api/api/relationships/v2/get",
+    "summary": "The caller’s relationships",
+    "documentation": false
+  },
+  {
+    "service": "api",
+    "method": "GET",
+    "path": "/api/relationships/mutualfriends",
+    "url": "/api/api/relationships/mutualfriends",
+    "summary": "Friends in common with another player",
+    "documentation": false
+  },
+  {
+    "service": "api",
+    "method": "POST",
+    "path": "/api/messages/v2/send",
+    "url": "/api/api/messages/v2/send",
+    "summary": "Send a message to another player",
+    "documentation": false
+  },
+  {
+    "service": "api",
+    "method": "POST",
+    "path": "/api/messages/v1/sendMultiple",
+    "url": "/api/api/messages/v1/sendMultiple",
+    "summary": "Send one message to several players",
+    "documentation": false
+  },
+  {
+    "service": "api",
+    "method": "GET",
+    "path": "/api/relationships/v2/sendfriendrequest",
+    "url": "/api/api/relationships/v2/sendfriendrequest",
+    "summary": "Send a friend request",
+    "documentation": false
+  },
+  {
+    "service": "api",
+    "method": "POST",
+    "path": "/api/relationships/v2/sendfriendrequest",
+    "url": "/api/api/relationships/v2/sendfriendrequest",
+    "summary": "Send a friend request",
+    "documentation": false
+  },
+  {
+    "service": "api",
+    "method": "GET",
+    "path": "/api/relationships/v2/acceptfriendrequest",
+    "url": "/api/api/relationships/v2/acceptfriendrequest",
+    "summary": "Accept a friend request",
+    "documentation": false
+  },
+  {
+    "service": "api",
+    "method": "POST",
+    "path": "/api/relationships/v2/acceptfriendrequest",
+    "url": "/api/api/relationships/v2/acceptfriendrequest",
+    "summary": "Accept a friend request",
+    "documentation": false
+  },
+  {
+    "service": "api",
+    "method": "GET",
+    "path": "/api/relationships/v2/removefriend",
+    "url": "/api/api/relationships/v2/removefriend",
+    "summary": "Unfriend, or cancel/decline a request",
+    "documentation": false
+  },
+  {
+    "service": "api",
+    "method": "POST",
+    "path": "/api/relationships/v2/removefriend",
+    "url": "/api/api/relationships/v2/removefriend",
+    "summary": "Unfriend, or cancel/decline a request",
+    "documentation": false
+  },
+  {
+    "service": "api",
+    "method": "GET",
+    "path": "/api/relationships/v2/addfriend",
+    "url": "/api/api/relationships/v2/addfriend",
+    "summary": "Befriend directly",
+    "documentation": false
+  },
+  {
+    "service": "api",
+    "method": "POST",
+    "path": "/api/relationships/v2/addfriend",
+    "url": "/api/api/relationships/v2/addfriend",
+    "summary": "Befriend directly",
+    "documentation": false
+  },
+  {
+    "service": "api",
+    "method": "GET",
+    "path": "/api/relationships/v1/ignore",
+    "url": "/api/api/relationships/v1/ignore",
+    "summary": "Ignore a player",
+    "documentation": false
+  },
+  {
+    "service": "api",
+    "method": "POST",
+    "path": "/api/relationships/v1/ignore",
+    "url": "/api/api/relationships/v1/ignore",
+    "summary": "Ignore a player",
+    "documentation": false
+  },
+  {
+    "service": "api",
+    "method": "GET",
+    "path": "/api/relationships/v1/unignore",
+    "url": "/api/api/relationships/v1/unignore",
+    "summary": "Stop ignoring a player",
+    "documentation": false
+  },
+  {
+    "service": "api",
+    "method": "POST",
+    "path": "/api/relationships/v1/unignore",
+    "url": "/api/api/relationships/v1/unignore",
+    "summary": "Stop ignoring a player",
+    "documentation": false
+  },
+  {
+    "service": "api",
+    "method": "GET",
+    "path": "/api/relationships/v1/mute",
+    "url": "/api/api/relationships/v1/mute",
+    "summary": "Mute a player",
+    "documentation": false
+  },
+  {
+    "service": "api",
+    "method": "POST",
+    "path": "/api/relationships/v1/mute",
+    "url": "/api/api/relationships/v1/mute",
+    "summary": "Mute a player",
+    "documentation": false
+  },
+  {
+    "service": "api",
+    "method": "GET",
+    "path": "/api/relationships/v1/unmute",
+    "url": "/api/api/relationships/v1/unmute",
+    "summary": "Unmute a player",
+    "documentation": false
+  },
+  {
+    "service": "api",
+    "method": "POST",
+    "path": "/api/relationships/v1/unmute",
+    "url": "/api/api/relationships/v1/unmute",
+    "summary": "Unmute a player",
+    "documentation": false
+  },
+  {
+    "service": "api",
+    "method": "GET",
+    "path": "/api/relationships/v1/favorite",
+    "url": "/api/api/relationships/v1/favorite",
+    "summary": "Favorite a player",
+    "documentation": false
+  },
+  {
+    "service": "api",
+    "method": "POST",
+    "path": "/api/relationships/v1/favorite",
+    "url": "/api/api/relationships/v1/favorite",
+    "summary": "Favorite a player",
+    "documentation": false
+  },
+  {
+    "service": "api",
+    "method": "GET",
+    "path": "/api/relationships/v1/unfavorite",
+    "url": "/api/api/relationships/v1/unfavorite",
+    "summary": "Unfavorite a player",
+    "documentation": false
+  },
+  {
+    "service": "api",
+    "method": "POST",
+    "path": "/api/relationships/v1/unfavorite",
+    "url": "/api/api/relationships/v1/unfavorite",
+    "summary": "Unfavorite a player",
+    "documentation": false
+  },
+  {
+    "service": "api",
+    "method": "GET",
+    "path": "/api/messages/v2/get",
+    "url": "/api/api/messages/v2/get",
+    "summary": "Direct messages",
+    "documentation": false
+  },
+  {
+    "service": "api",
+    "method": "POST",
+    "path": "/api/messages/v3/delete",
+    "url": "/api/api/messages/v3/delete",
+    "summary": "Delete messages",
+    "documentation": false
+  },
+  {
+    "service": "api",
+    "method": "POST",
+    "path": "/api/messages/v1/friendOnlineStatus",
+    "url": "/api/api/messages/v1/friendOnlineStatus",
+    "summary": "How many friends are online",
+    "documentation": false
+  },
+  {
+    "service": "api",
+    "method": "GET",
+    "path": "/api/messages/v1/favoriteFriendOnlineStatus",
+    "url": "/api/api/messages/v1/favoriteFriendOnlineStatus",
+    "summary": "Online status of favorited friends",
+    "documentation": false
+  },
+  {
+    "service": "api",
+    "method": "GET",
+    "path": "/api/playerReputation/v1/:id",
+    "url": "/api/api/playerReputation/v1/:id",
+    "summary": "A player’s reputation",
+    "documentation": false
+  },
+  {
+    "service": "api",
+    "method": "GET",
+    "path": "/api/players/v1/progression/:id",
+    "url": "/api/api/players/v1/progression/:id",
+    "summary": "A player’s level and XP",
+    "documentation": false
+  },
+  {
+    "service": "api",
+    "method": "POST",
+    "path": "/api/playerReputation/v1/bulk",
+    "url": "/api/api/playerReputation/v1/bulk",
+    "summary": "Reputations in bulk (v1)",
+    "documentation": false
+  },
+  {
+    "service": "api",
+    "method": "POST",
+    "path": "/api/playerReputation/v2/bulk",
+    "url": "/api/api/playerReputation/v2/bulk",
+    "summary": "Reputations in bulk",
+    "documentation": false
+  },
+  {
+    "service": "api",
+    "method": "GET",
+    "path": "/api/playerReputation/v2/bulk",
+    "url": "/api/api/playerReputation/v2/bulk",
+    "summary": "Reputations in bulk (GET form)",
+    "documentation": false
+  },
+  {
+    "service": "api",
+    "method": "POST",
+    "path": "/api/PlayerCheer/v1/create",
+    "url": "/api/api/PlayerCheer/v1/create",
+    "summary": "Cheer another player",
+    "documentation": false
+  },
+  {
+    "service": "api",
+    "method": "POST",
+    "path": "/api/PlayerCheer/v1/SetSelectedCheer",
+    "url": "/api/api/PlayerCheer/v1/SetSelectedCheer",
+    "summary": "Pin a cheer to your profile",
+    "documentation": false
+  },
+  {
+    "service": "api",
+    "method": "POST",
+    "path": "/api/players/v1/progression/bulk",
+    "url": "/api/api/players/v1/progression/bulk",
+    "summary": "Progressions in bulk (v1)",
+    "documentation": false
+  },
+  {
+    "service": "api",
+    "method": "POST",
+    "path": "/api/players/v2/progression/bulk",
+    "url": "/api/api/players/v2/progression/bulk",
+    "summary": "Progressions in bulk (v2)",
+    "documentation": false
+  },
+  {
+    "service": "api",
+    "method": "GET",
+    "path": "/api/players/v2/progression/bulk",
+    "url": "/api/api/players/v2/progression/bulk",
+    "summary": "Progressions in bulk (GET form)",
+    "documentation": false
+  },
+  {
+    "service": "api",
+    "method": "POST",
+    "path": "/api/v1/progression/bulk",
+    "url": "/api/api/v1/progression/bulk",
+    "summary": "Progressions in bulk (unversioned path)",
+    "documentation": false
+  },
+  {
+    "service": "api",
+    "method": "GET",
+    "path": "/api/progressionEvents/active",
+    "url": "/api/api/progressionEvents/active",
+    "summary": "Progression events currently running (stub)",
+    "documentation": false
+  },
+  {
+    "service": "api",
+    "method": "POST",
+    "path": "/api/avatar/v2/gifts/generate",
+    "url": "/api/api/avatar/v2/gifts/generate",
+    "summary": "Generate a gift box",
+    "documentation": false
+  },
+  {
+    "service": "api",
+    "method": "POST",
+    "path": "/api/avatar/v1/lockeditems/bulk",
+    "url": "/api/api/avatar/v1/lockeditems/bulk",
+    "summary": "Locked avatar items in bulk",
+    "documentation": false
+  },
+  {
+    "service": "api",
+    "method": "GET",
+    "path": "/api/customAvatarItems/v1/isCreationAllowedForAccount",
+    "url": "/api/api/customAvatarItems/v1/isCreationAllowedForAccount",
+    "summary": "May this account create custom items?",
+    "documentation": false
+  },
+  {
+    "service": "api",
+    "method": "GET",
+    "path": "/api/customAvatarItems/v1/isCreationEnabled",
+    "url": "/api/api/customAvatarItems/v1/isCreationEnabled",
+    "summary": "Is custom-item creation enabled?",
+    "documentation": false
+  },
+  {
+    "service": "api",
+    "method": "GET",
+    "path": "/api/customAvatarItems/v1/isRenderingEnabled",
+    "url": "/api/api/customAvatarItems/v1/isRenderingEnabled",
+    "summary": "Is custom-item rendering enabled?",
+    "documentation": false
+  },
+  {
+    "service": "api",
+    "method": "GET",
+    "path": "/api/customAvatarItems/v1/minPriceForPublicItem",
+    "url": "/api/api/customAvatarItems/v1/minPriceForPublicItem",
+    "summary": "Minimum token price for a public custom item",
+    "documentation": false
+  },
+  {
+    "service": "api",
+    "method": "POST",
+    "path": "/api/customAvatarItems/v1",
+    "url": "/api/api/customAvatarItems/v1",
+    "summary": "Create a custom avatar item",
+    "documentation": false
+  },
+  {
+    "service": "api",
+    "method": "PUT",
+    "path": "/api/customAvatarItems/v1/:id{[0-9a-fA-F-]{36}}",
+    "url": "/api/api/customAvatarItems/v1/:id{[0-9a-fA-F-]{36}}",
+    "summary": "Edit a custom avatar item",
+    "documentation": false
+  },
+  {
+    "service": "api",
+    "method": "DELETE",
+    "path": "/api/customAvatarItems/v1/:id{[0-9a-fA-F-]{36}}",
+    "url": "/api/api/customAvatarItems/v1/:id{[0-9a-fA-F-]{36}}",
+    "summary": "Delete a custom avatar item",
+    "documentation": false
+  },
+  {
+    "service": "api",
+    "method": "GET",
+    "path": "/api/customAvatarItems/v1/featured",
+    "url": "/api/api/customAvatarItems/v1/featured",
+    "summary": "Featured custom avatar items",
+    "documentation": false
+  },
+  {
+    "service": "api",
+    "method": "GET",
+    "path": "/api/customAvatarItems/v1/search",
+    "url": "/api/api/customAvatarItems/v1/search",
+    "summary": "Search custom avatar items",
+    "documentation": false
+  },
+  {
+    "service": "api",
+    "method": "GET",
+    "path": "/api/customAvatarItems/v1/hot",
+    "url": "/api/api/customAvatarItems/v1/hot",
+    "summary": "Trending custom avatar items",
+    "documentation": false
+  },
+  {
+    "service": "api",
+    "method": "POST",
+    "path": "/api/customAvatarItems/v1/bulk",
+    "url": "/api/api/customAvatarItems/v1/bulk",
+    "summary": "Custom avatar items in bulk",
+    "documentation": false
+  },
+  {
+    "service": "api",
+    "method": "GET",
+    "path": "/api/customAvatarItems/v2/fromCreator/:accountId{[0-9]+}",
+    "url": "/api/api/customAvatarItems/v2/fromCreator/:accountId{[0-9]+}",
+    "summary": "A creator’s custom avatar items",
+    "documentation": false
+  },
+  {
+    "service": "api",
+    "method": "POST",
+    "path": "/api/customAvatarItems/GetCustomAvatarItemCurrentSavesForLegacyAvatarItems",
+    "url": "/api/api/customAvatarItems/GetCustomAvatarItemCurrentSavesForLegacyAvatarItems",
+    "summary": "Custom-item saves for legacy avatar items",
+    "documentation": false
+  },
+  {
+    "service": "api",
+    "method": "GET",
+    "path": "/outfits/me",
+    "url": "/api/outfits/me",
+    "summary": "The caller’s outfit",
+    "documentation": false
+  },
+  {
+    "service": "api",
+    "method": "PUT",
+    "path": "/outfits/me",
+    "url": "/api/outfits/me",
+    "summary": "Save the caller’s outfit",
+    "documentation": false
+  },
+  {
+    "service": "api",
+    "method": "POST",
+    "path": "/outfits/bulk",
+    "url": "/api/outfits/bulk",
+    "summary": "Several players’ outfits",
+    "documentation": false
+  },
+  {
+    "service": "api",
+    "method": "GET",
+    "path": "/outfits/me/saved",
+    "url": "/api/outfits/me/saved",
+    "summary": "The caller’s saved outfits",
+    "documentation": false
+  },
+  {
+    "service": "api",
+    "method": "GET",
+    "path": "/api/inventions/v1",
+    "url": "/api/api/inventions/v1",
+    "summary": "One invention by id",
+    "documentation": false
+  },
+  {
+    "service": "api",
+    "method": "GET",
+    "path": "/api/inventions/v1/tagfilters",
+    "url": "/api/api/inventions/v1/tagfilters",
+    "summary": "Invention browse filter chips",
+    "documentation": false
+  },
+  {
+    "service": "api",
+    "method": "GET",
+    "path": "/api/inventions/v2/batch",
+    "url": "/api/api/inventions/v2/batch",
+    "summary": "Inventions by id, in bulk",
+    "documentation": false
+  },
+  {
+    "service": "api",
+    "method": "GET",
+    "path": "/api/inventions/v1/fulllineageowner",
+    "url": "/api/api/inventions/v1/fulllineageowner",
+    "summary": "Does the caller own this whole lineage?",
+    "documentation": false
+  },
+  {
+    "service": "api",
+    "method": "GET",
+    "path": "/api/inventions/v1/room",
+    "url": "/api/api/inventions/v1/room",
+    "summary": "A room’s inventions",
+    "documentation": false
+  },
+  {
+    "service": "api",
+    "method": "GET",
+    "path": "/api/inventions/v1/personaldetails/:inventionId{[0-9]+}",
+    "url": "/api/api/inventions/v1/personaldetails/:inventionId{[0-9]+}",
+    "summary": "The caller’s own relation to an invention",
+    "documentation": false
+  },
+  {
+    "service": "api",
+    "method": "GET",
+    "path": "/api/inventions/v1/version",
+    "url": "/api/api/inventions/v1/version",
+    "summary": "One version of an invention",
+    "documentation": false
+  },
+  {
+    "service": "api",
+    "method": "GET",
+    "path": "/api/inventions/v1/update",
+    "url": "/api/api/inventions/v1/update",
+    "summary": "Edit an invention’s metadata",
+    "documentation": false
+  },
+  {
+    "service": "api",
+    "method": "POST",
+    "path": "/api/inventions/v1/update",
+    "url": "/api/api/inventions/v1/update",
+    "summary": "Edit an invention’s metadata",
+    "documentation": false
+  },
+  {
+    "service": "api",
+    "method": "GET",
+    "path": "/api/inventions/v3/publish",
+    "url": "/api/api/inventions/v3/publish",
+    "summary": "Publish an invention",
+    "documentation": false
+  },
+  {
+    "service": "api",
+    "method": "POST",
+    "path": "/api/inventions/v1/updateprice",
+    "url": "/api/api/inventions/v1/updateprice",
+    "summary": "Set an invention’s price",
+    "documentation": false
+  },
+  {
+    "service": "api",
+    "method": "POST",
+    "path": "/api/inventions/v1/settags",
+    "url": "/api/api/inventions/v1/settags",
+    "summary": "Replace an invention’s tags",
+    "documentation": false
+  },
+  {
+    "service": "api",
+    "method": "GET",
+    "path": "/api/inventions/v1/details",
+    "url": "/api/api/inventions/v1/details",
+    "summary": "An invention’s detail card",
+    "documentation": false
+  },
+  {
+    "service": "api",
+    "method": "GET",
+    "path": "/api/inventions/v1/toptoday",
+    "url": "/api/api/inventions/v1/toptoday",
+    "summary": "The “top today” feed",
+    "documentation": false
+  },
+  {
+    "service": "api",
+    "method": "GET",
+    "path": "/api/inventions/v1/featured",
+    "url": "/api/api/inventions/v1/featured",
+    "summary": "The featured feed",
+    "documentation": false
+  },
+  {
+    "service": "api",
+    "method": "GET",
+    "path": "/api/inventions/v1/featureddormskins",
+    "url": "/api/api/inventions/v1/featureddormskins",
+    "summary": "The featured dorm-skin feed",
+    "documentation": false
+  },
+  {
+    "service": "api",
+    "method": "GET",
+    "path": "/api/inventions/v1/fromcreators",
+    "url": "/api/api/inventions/v1/fromcreators",
+    "summary": "Inventions by particular creators (stub)",
+    "documentation": false
+  },
+  {
+    "service": "api",
+    "method": "GET",
+    "path": "/api/inventions/v2/search",
+    "url": "/api/api/inventions/v2/search",
+    "summary": "Search / browse inventions",
+    "documentation": false
+  },
+  {
+    "service": "api",
+    "method": "GET",
+    "path": "/api/inventions/v2/mine",
+    "url": "/api/api/inventions/v2/mine",
+    "summary": "The caller’s own inventions",
+    "documentation": false
+  },
+  {
+    "service": "api",
+    "method": "POST",
+    "path": "/api/customAvatarItems/v1/:id{[0-9a-fA-F-]{36}}/report",
+    "url": "/api/api/customAvatarItems/v1/:id{[0-9a-fA-F-]{36}}/report",
+    "summary": "Report a custom avatar item",
+    "documentation": false
+  },
+  {
+    "service": "api",
+    "method": "POST",
+    "path": "/api/inventions/v1/cheer",
+    "url": "/api/api/inventions/v1/cheer",
+    "summary": "Cheer or un-cheer an invention",
+    "documentation": false
+  },
+  {
+    "service": "api",
+    "method": "POST",
+    "path": "/api/inventions/v1/report",
+    "url": "/api/api/inventions/v1/report",
+    "summary": "Report an invention",
+    "documentation": false
+  },
+  {
+    "service": "api",
+    "method": "POST",
+    "path": "/api/inventions/v6/save",
+    "url": "/api/api/inventions/v6/save",
+    "summary": "Save a new invention",
+    "documentation": false
+  },
+  {
+    "service": "api",
+    "method": "POST",
+    "path": "/api/inventions/v9/save",
+    "url": "/api/api/inventions/v9/save",
+    "summary": "Save a new invention (v9)",
+    "documentation": false
+  },
+  {
+    "service": "api",
+    "method": "PUT",
+    "path": "/api/inventions/v2/metadata",
+    "url": "/api/api/inventions/v2/metadata",
+    "summary": "Edit an invention’s metadata (v2)",
+    "documentation": false
+  },
+  {
+    "service": "api",
+    "method": "POST",
+    "path": "/api/inventions/v4/publish",
+    "url": "/api/api/inventions/v4/publish",
+    "summary": "Publish an invention (v4)",
+    "documentation": false
+  },
+  {
+    "service": "api",
+    "method": "POST",
+    "path": "/api/inventions/v2/delete",
+    "url": "/api/api/inventions/v2/delete",
+    "summary": "Delete an invention",
+    "documentation": false
+  },
+  {
+    "service": "api",
+    "method": "POST",
+    "path": "/api/sanitize/v1",
+    "url": "/api/api/sanitize/v1",
+    "summary": "Sanitize a string",
+    "documentation": false
+  },
+  {
+    "service": "api",
+    "method": "POST",
+    "path": "/api/sanitize/v1/isPure",
+    "url": "/api/api/sanitize/v1/isPure",
+    "summary": "Whether a string is clean",
+    "documentation": false
+  },
+  {
+    "service": "api",
+    "method": "GET",
+    "path": "/api/activities/charades/v1/words/:activity",
+    "url": "/api/api/activities/charades/v1/words/:activity",
+    "summary": "An activity’s word bank",
+    "documentation": false
+  },
+  {
+    "service": "api",
+    "method": "GET",
+    "path": "/api/keepsakes/globalconfig",
+    "url": "/api/api/keepsakes/globalconfig",
+    "summary": "Keepsake feature switches",
+    "documentation": false
+  },
+  {
+    "service": "api",
+    "method": "GET",
+    "path": "/api/keepsakes/rooms/:roomId",
+    "url": "/api/api/keepsakes/rooms/:roomId",
+    "summary": "A room’s keepsakes",
+    "documentation": false
+  },
+  {
+    "service": "api",
+    "method": "GET",
+    "path": "/api/keepsakes/categories",
+    "url": "/api/api/keepsakes/categories",
+    "summary": "Keepsake categories",
+    "documentation": false
+  },
+  {
+    "service": "api",
+    "method": "GET",
+    "path": "/api/communityboard/v2/current",
+    "url": "/api/api/communityboard/v2/current",
+    "summary": "The current community board",
+    "documentation": false
+  },
+  {
+    "service": "api",
+    "method": "GET",
+    "path": "/api/CircuitChipLists/:list",
+    "url": "/api/api/CircuitChipLists/:list",
+    "summary": "One circuit chip list",
+    "documentation": false
+  },
+  {
+    "service": "api",
+    "method": "GET",
+    "path": "/api/announcement/v1/get",
+    "url": "/api/api/announcement/v1/get",
+    "summary": "Announcements",
+    "documentation": false
+  },
+  {
+    "service": "api",
+    "method": "POST",
+    "path": "/api/gamesight/event",
+    "url": "/api/api/gamesight/event",
+    "summary": "Analytics event sink",
+    "documentation": false
+  },
+  {
+    "service": "api",
+    "method": "GET",
+    "path": "/api/playerevents/v1",
+    "url": "/api/api/playerevents/v1",
+    "summary": "The player-events browse feed",
+    "documentation": false
+  },
+  {
+    "service": "api",
+    "method": "GET",
+    "path": "/api/playerevents/v1/all",
+    "url": "/api/api/playerevents/v1/all",
+    "summary": "The caller’s player events",
+    "documentation": false
+  },
+  {
+    "service": "api",
+    "method": "GET",
+    "path": "/api/playerevents/v1/tagfilters",
+    "url": "/api/api/playerevents/v1/tagfilters",
+    "summary": "Player-event filter chips",
+    "documentation": false
+  },
+  {
+    "service": "api",
+    "method": "GET",
+    "path": "/api/playerevents/v1/clubs",
+    "url": "/api/api/playerevents/v1/clubs",
+    "summary": "Player events across several clubs",
+    "documentation": false
+  },
+  {
+    "service": "api",
+    "method": "GET",
+    "path": "/api/playerevents/v1/club/:clubId{[0-9]+}",
+    "url": "/api/api/playerevents/v1/club/:clubId{[0-9]+}",
+    "summary": "Player events for one club",
+    "documentation": false
+  },
+  {
+    "service": "api",
+    "method": "GET",
+    "path": "/api/playerevents/v1/room/:roomId{[0-9]+}",
+    "url": "/api/api/playerevents/v1/room/:roomId{[0-9]+}",
+    "summary": "Player events in one room",
+    "documentation": false
+  },
+  {
+    "service": "api",
+    "method": "GET",
+    "path": "/api/playerevents/v1/searchlive",
+    "url": "/api/api/playerevents/v1/searchlive",
+    "summary": "Live player events",
+    "documentation": false
+  },
+  {
+    "service": "api",
+    "method": "GET",
+    "path": "/api/playerevents/v1/search",
+    "url": "/api/api/playerevents/v1/search",
+    "summary": "Search player events",
+    "documentation": false
+  },
+  {
+    "service": "api",
+    "method": "POST",
+    "path": "/api/playerevents/v1/bulk",
+    "url": "/api/api/playerevents/v1/bulk",
+    "summary": "Several player events by id",
+    "documentation": false
+  },
+  {
+    "service": "api",
+    "method": "GET",
+    "path": "/api/playerevents/v1/bulk",
+    "url": "/api/api/playerevents/v1/bulk",
+    "summary": "Several player events by id (query form)",
+    "documentation": false
+  },
+  {
+    "service": "api",
+    "method": "POST",
+    "path": "/api/playerevents/v1/respond",
+    "url": "/api/api/playerevents/v1/respond",
+    "summary": "Answer a player event",
+    "documentation": false
+  },
+  {
+    "service": "api",
+    "method": "POST",
+    "path": "/api/playerevents/v1/report",
+    "url": "/api/api/playerevents/v1/report",
+    "summary": "Report a player event",
+    "documentation": false
+  },
+  {
+    "service": "api",
+    "method": "POST",
+    "path": "/api/playerevents/v1/bulkInvite",
+    "url": "/api/api/playerevents/v1/bulkInvite",
+    "summary": "Invite players to an event",
+    "documentation": false
+  },
+  {
+    "service": "api",
+    "method": "POST",
+    "path": "/api/playerevents/v2",
+    "url": "/api/api/playerevents/v2",
+    "summary": "Create a player event",
+    "documentation": false
+  },
+  {
+    "service": "api",
+    "method": "POST",
+    "path": "/api/playerevents/v2/delete/:eventId{[0-9]+}",
+    "url": "/api/api/playerevents/v2/delete/:eventId{[0-9]+}",
+    "summary": "Delete a player event",
+    "documentation": false
+  },
+  {
+    "service": "api",
+    "method": "DELETE",
+    "path": "/api/playerevents/v2/delete/:eventId{[0-9]+}",
+    "url": "/api/api/playerevents/v2/delete/:eventId{[0-9]+}",
+    "summary": "Delete a player event",
+    "documentation": false
+  },
+  {
+    "service": "api",
+    "method": "GET",
+    "path": "/api/playerevents/v2/:eventId{[0-9]+}",
+    "url": "/api/api/playerevents/v2/:eventId{[0-9]+}",
+    "summary": "One player event (v2 envelope)",
+    "documentation": false
+  },
+  {
+    "service": "api",
+    "method": "POST",
+    "path": "/api/playerevents/v2/:eventId{[0-9]+}",
+    "url": "/api/api/playerevents/v2/:eventId{[0-9]+}",
+    "summary": "Update a player event",
+    "documentation": false
+  },
+  {
+    "service": "api",
+    "method": "PUT",
+    "path": "/api/playerevents/v2/:eventId{[0-9]+}/time",
+    "url": "/api/api/playerevents/v2/:eventId{[0-9]+}/time",
+    "summary": "Reschedule a player event",
+    "documentation": false
+  },
+  {
+    "service": "api",
+    "method": "PUT",
+    "path": "/api/playerevents/v2/:eventId{[0-9]+}/accessibility",
+    "url": "/api/api/playerevents/v2/:eventId{[0-9]+}/accessibility",
+    "summary": "Set a player event’s accessibility",
+    "documentation": false
+  },
+  {
+    "service": "api",
+    "method": "PUT",
+    "path": "/api/playerevents/v2/:eventId{[0-9]+}/tags",
+    "url": "/api/api/playerevents/v2/:eventId{[0-9]+}/tags",
+    "summary": "Set a player event’s tags",
+    "documentation": false
+  },
+  {
+    "service": "api",
+    "method": "PUT",
+    "path": "/api/playerevents/v2/:eventId{[0-9]+}/description",
+    "url": "/api/api/playerevents/v2/:eventId{[0-9]+}/description",
+    "summary": "Set a player event’s description",
+    "documentation": false
+  },
+  {
+    "service": "api",
+    "method": "PUT",
+    "path": "/api/playerevents/v2/:eventId{[0-9]+}/name",
+    "url": "/api/api/playerevents/v2/:eventId{[0-9]+}/name",
+    "summary": "Rename a player event",
+    "documentation": false
+  },
+  {
+    "service": "api",
+    "method": "GET",
+    "path": "/api/playerevents/v1/:eventId{[0-9]+}/responses",
+    "url": "/api/api/playerevents/v1/:eventId{[0-9]+}/responses",
+    "summary": "An event’s RSVPs",
+    "documentation": false
+  },
+  {
+    "service": "api",
+    "method": "GET",
+    "path": "/api/playerevents/v1/:eventId{[0-9]+}",
+    "url": "/api/api/playerevents/v1/:eventId{[0-9]+}",
+    "summary": "One player event",
+    "documentation": false
+  },
+  {
+    "service": "api",
+    "method": "GET",
+    "path": "/api/PlayerReporting/v1/moderationBlockDetails",
+    "url": "/api/api/PlayerReporting/v1/moderationBlockDetails",
+    "summary": "Whether the caller is blocked",
+    "documentation": false
+  },
+  {
+    "service": "api",
+    "method": "POST",
+    "path": "/api/PlayerReporting/v1/moderationBlockDetails",
+    "url": "/api/api/PlayerReporting/v1/moderationBlockDetails",
+    "summary": "Whether the caller is blocked",
+    "documentation": false
+  },
+  {
+    "service": "api",
+    "method": "GET",
+    "path": "/api/PlayerReporting/v1/voteToKickReasons",
+    "url": "/api/api/PlayerReporting/v1/voteToKickReasons",
+    "summary": "Vote-to-kick reasons",
+    "documentation": false
+  },
+  {
+    "service": "api",
+    "method": "POST",
+    "path": "/api/PlayerReporting/v1/referee",
+    "url": "/api/api/PlayerReporting/v1/referee",
+    "summary": "Whether the caller is a referee",
+    "documentation": false
+  },
+  {
+    "service": "api",
+    "method": "GET",
+    "path": "/api/referee/files",
+    "url": "/api/api/referee/files",
+    "summary": "Referee case files",
+    "documentation": false
+  },
+  {
+    "service": "api",
+    "method": "POST",
+    "path": "/api/PlayerReporting/v1/hile",
+    "url": "/api/api/PlayerReporting/v1/hile",
+    "summary": "Report submission sink",
+    "documentation": false
+  },
+  {
+    "service": "api",
+    "method": "POST",
+    "path": "/api/PlayerReporting/v3/create",
+    "url": "/api/api/PlayerReporting/v3/create",
+    "summary": "Submit a player report",
+    "documentation": false
+  },
+  {
+    "service": "api",
+    "method": "POST",
+    "path": "/api/PlayerReporting/v3/voteToKick",
+    "url": "/api/api/PlayerReporting/v3/voteToKick",
+    "summary": "Call a vote to kick a player",
+    "documentation": false
+  },
+  {
+    "service": "api",
+    "method": "POST",
+    "path": "/api/PlayerReporting/v1/instantKick",
+    "url": "/api/api/PlayerReporting/v1/instantKick",
+    "summary": "Kick players out of a room instance",
+    "documentation": false
+  },
+  {
+    "service": "api",
+    "method": "POST",
+    "path": "/api/playerwarnings",
+    "url": "/api/api/playerwarnings",
+    "summary": "Issue a player warning",
+    "documentation": false
+  },
+  {
+    "service": "api",
+    "method": "POST",
+    "path": "/api/PlayerReporting/v1/deviceId",
+    "url": "/api/api/PlayerReporting/v1/deviceId",
+    "summary": "Device id rotation (known broken)",
+    "documentation": false
+  },
+  {
+    "service": "api",
+    "method": "GET",
+    "path": "/api/equipment/v2/getUnlocked",
+    "url": "/api/api/equipment/v2/getUnlocked",
+    "summary": "Unlocked equipment",
+    "documentation": false
+  },
+  {
+    "service": "api",
+    "method": "GET",
+    "path": "/api/consumables/v2/getUnlocked",
+    "url": "/api/api/consumables/v2/getUnlocked",
+    "summary": "Unlocked consumables",
+    "documentation": false
+  },
+  {
+    "service": "api",
+    "method": "GET",
+    "path": "/api/roomkeys/v1/mine",
+    "url": "/api/api/roomkeys/v1/mine",
+    "summary": "The caller’s room keys",
+    "documentation": false
+  },
+  {
+    "service": "api",
+    "method": "GET",
+    "path": "/api/roomkeys/v1/room",
+    "url": "/api/api/roomkeys/v1/room",
+    "summary": "A room’s keys",
+    "documentation": false
+  },
+  {
+    "service": "api",
+    "method": "GET",
+    "path": "/api/quickPlay/v1/getandclear",
+    "url": "/api/api/quickPlay/v1/getandclear",
+    "summary": "Take the pending quick-play action",
+    "documentation": false
+  },
+  {
+    "service": "api",
+    "method": "GET",
+    "path": "/api/rooms/v1/filters",
+    "url": "/api/api/rooms/v1/filters",
+    "summary": "Room browse filter chips",
+    "documentation": false
+  },
+  {
+    "service": "api",
+    "method": "POST",
+    "path": "/api/rooms/v1/verifyRole",
+    "url": "/api/api/rooms/v1/verifyRole",
+    "summary": "Verify the caller’s role in a room",
+    "documentation": false
+  },
+  {
+    "service": "api",
+    "method": "GET",
+    "path": "/api/images/v2/named",
+    "url": "/api/api/images/v2/named",
+    "summary": "Named images",
+    "documentation": false
+  },
+  {
+    "service": "api",
+    "method": "POST",
+    "path": "/api/images/v4/uploadsaved",
+    "url": "/api/api/images/v4/uploadsaved",
+    "summary": "Upload a saved image",
+    "documentation": false
+  },
+  {
+    "service": "api",
+    "method": "DELETE",
+    "path": "/api/images/v1/deletesaved",
+    "url": "/api/api/images/v1/deletesaved",
+    "summary": "Delete one of the caller’s photos",
+    "documentation": false
+  },
+  {
+    "service": "api",
+    "method": "GET",
+    "path": "/api/images/v4/room/:roomId{[0-9]+}",
+    "url": "/api/api/images/v4/room/:roomId{[0-9]+}",
+    "summary": "A room’s photo feed",
+    "documentation": false
+  },
+  {
+    "service": "api",
+    "method": "GET",
+    "path": "/api/images/v4/player/:playerId{[0-9]+}",
+    "url": "/api/api/images/v4/player/:playerId{[0-9]+}",
+    "summary": "A player’s photos",
+    "documentation": false
+  },
+  {
+    "service": "api",
+    "method": "GET",
+    "path": "/api/images/v5/player/:playerId{[0-9]+}",
+    "url": "/api/api/images/v5/player/:playerId{[0-9]+}",
+    "summary": "A player’s photos, sortable",
+    "documentation": false
+  },
+  {
+    "service": "api",
+    "method": "GET",
+    "path": "/api/images/v3/feed/player/:playerId{[0-9]+}",
+    "url": "/api/api/images/v3/feed/player/:playerId{[0-9]+}",
+    "summary": "A player’s photo feed",
+    "documentation": false
+  },
+  {
+    "service": "api",
+    "method": "GET",
+    "path": "/api/images/v1/slideshow",
+    "url": "/api/api/images/v1/slideshow",
+    "summary": "The global slideshow feed",
+    "documentation": false
+  },
+  {
+    "service": "api",
+    "method": "GET",
+    "path": "/api/images/v5/bulk",
+    "url": "/api/api/images/v5/bulk",
+    "summary": "Image metadata by id, in bulk",
+    "documentation": false
+  },
+  {
+    "service": "api",
+    "method": "GET",
+    "path": "/api/images/v6",
+    "url": "/api/api/images/v6",
+    "summary": "Image metadata by filename",
+    "documentation": false
+  },
+  {
+    "service": "api",
+    "method": "POST",
+    "path": "/api/images/v1/cheer",
+    "url": "/api/api/images/v1/cheer",
+    "summary": "Cheer or un-cheer a photo",
+    "documentation": false
+  },
+  {
+    "service": "api",
+    "method": "GET",
+    "path": "/api/images/v5/cheered/bulk",
+    "url": "/api/api/images/v5/cheered/bulk",
+    "summary": "Which photos the caller has cheered",
+    "documentation": false
+  },
+  {
+    "service": "api",
+    "method": "POST",
+    "path": "/api/images/v5/cheered/bulk",
+    "url": "/api/api/images/v5/cheered/bulk",
+    "summary": "Which photos the caller has cheered (bulk POST)",
+    "documentation": false
+  },
+  {
+    "service": "api",
+    "method": "GET",
+    "path": "/api/players/v1/playerPhotoTaggingSetting",
+    "url": "/api/api/players/v1/playerPhotoTaggingSetting",
+    "summary": "The caller’s photo-tagging preference",
+    "documentation": false
+  },
+  {
+    "service": "api",
+    "method": "PUT",
+    "path": "/api/players/v1/playerPhotoTaggingSetting",
+    "url": "/api/api/players/v1/playerPhotoTaggingSetting",
+    "summary": "Set the caller’s photo-tagging preference",
+    "documentation": false
+  },
+  {
+    "service": "api",
+    "method": "GET",
+    "path": "/iam/me/channels/:type",
+    "url": "/api/iam/me/channels/:type",
+    "summary": "The caller’s channels of a type",
+    "documentation": false
+  },
+  {
+    "service": "api",
+    "method": "GET",
+    "path": "/openapi.json",
+    "url": "/api/openapi.json",
+    "summary": "",
+    "documentation": true
+  },
+  {
+    "service": "auth",
+    "method": "GET",
+    "path": "/eac/challenge",
+    "url": "/auth/eac/challenge",
+    "summary": "Easy Anti-Cheat challenge",
+    "documentation": false
+  },
+  {
+    "service": "auth",
+    "method": "GET",
+    "path": "/cachedlogin/forplatformid/:platform/:id",
+    "url": "/auth/cachedlogin/forplatformid/:platform/:id",
+    "summary": "Accounts linked to a platform id",
+    "documentation": false
+  },
+  {
+    "service": "auth",
+    "method": "POST",
+    "path": "/cachedlogin/forplatformid/:platform/:id",
+    "url": "/auth/cachedlogin/forplatformid/:platform/:id",
+    "summary": "Accounts linked to a platform id",
+    "documentation": false
+  },
+  {
+    "service": "auth",
+    "method": "POST",
+    "path": "/cachedlogin/forplatformids",
+    "url": "/auth/cachedlogin/forplatformids",
+    "summary": "Bulk cached-login lookup (friends resolution)",
+    "documentation": false
+  },
+  {
+    "service": "auth",
+    "method": "POST",
+    "path": "/connect/token",
+    "url": "/auth/connect/token",
+    "summary": "OAuth token endpoint — issues a JWT",
+    "documentation": false
+  },
+  {
+    "service": "auth",
+    "method": "POST",
+    "path": "/account/me/changepassword",
+    "url": "/auth/account/me/changepassword",
+    "summary": "Change the caller's password",
+    "documentation": false
+  },
+  {
+    "service": "auth",
+    "method": "GET",
+    "path": "/privileges/me/restrictions",
+    "url": "/auth/privileges/me/restrictions",
+    "summary": "The caller’s moderation restrictions",
+    "documentation": false
+  },
+  {
+    "service": "auth",
+    "method": "GET",
+    "path": "/role/developer/:id",
+    "url": "/auth/role/developer/:id",
+    "summary": "Whether a player has the developer role",
+    "documentation": false
+  },
+  {
+    "service": "auth",
+    "method": "GET",
+    "path": "/role/moderator/:id",
+    "url": "/auth/role/moderator/:id",
+    "summary": "Whether a player has the moderator role",
+    "documentation": false
+  },
+  {
+    "service": "auth",
+    "method": "GET",
+    "path": "/oculus/nonce",
+    "url": "/auth/oculus/nonce",
+    "summary": "A fresh nonce for the Oculus login flow",
+    "documentation": false
+  },
+  {
+    "service": "auth",
+    "method": "GET",
+    "path": "/openapi.json",
+    "url": "/auth/openapi.json",
+    "summary": "",
+    "documentation": true
+  },
+  {
+    "service": "cards",
+    "method": "GET",
+    "path": "/",
+    "url": "/cards/",
+    "summary": "",
+    "documentation": false
+  },
+  {
+    "service": "cdn",
+    "method": "GET",
+    "path": "/",
+    "url": "/cdn/",
+    "summary": "Service liveness",
+    "documentation": false
+  },
+  {
+    "service": "cdn",
+    "method": "GET",
+    "path": "/config/LoadingScreenTipData",
+    "url": "/cdn/config/LoadingScreenTipData",
+    "summary": "Loading-screen tips",
+    "documentation": false
+  },
+  {
+    "service": "cdn",
+    "method": "GET",
+    "path": "/config/:name",
+    "url": "/cdn/config/:name",
+    "summary": "Serve a config file",
+    "documentation": false
+  },
+  {
+    "service": "cdn",
+    "method": "GET",
+    "path": "/sigs/:sigName",
+    "url": "/cdn/sigs/:sigName",
+    "summary": "Serve a signature blob",
+    "documentation": false
+  },
+  {
+    "service": "cdn",
+    "method": "GET",
+    "path": "/room/:dataBlob{.+}",
+    "url": "/cdn/room/:dataBlob{.+}",
+    "summary": "Serve room build data",
+    "documentation": false
+  },
+  {
+    "service": "cdn",
+    "method": "GET",
+    "path": "/invention/:dataBlob{.+}",
+    "url": "/cdn/invention/:dataBlob{.+}",
+    "summary": "Serve invention data",
+    "documentation": false
+  },
+  {
+    "service": "cdn",
+    "method": "GET",
+    "path": "/data/:id{.+}",
+    "url": "/cdn/data/:id{.+}",
+    "summary": "Serve a client data blob",
+    "documentation": false
+  },
+  {
+    "service": "cdn",
+    "method": "GET",
+    "path": "/openapi.json",
+    "url": "/cdn/openapi.json",
+    "summary": "",
+    "documentation": true
+  },
+  {
+    "service": "chat",
+    "method": "GET",
+    "path": "/",
+    "url": "/chat/",
+    "summary": "Service liveness",
+    "documentation": false
+  },
+  {
+    "service": "chat",
+    "method": "GET",
+    "path": "/thread",
+    "url": "/chat/thread",
+    "summary": "The caller’s thread list",
+    "documentation": false
+  },
+  {
+    "service": "chat",
+    "method": "POST",
+    "path": "/thread",
+    "url": "/chat/thread",
+    "summary": "Open a thread with a set of players and post the first message",
+    "documentation": false
+  },
+  {
+    "service": "chat",
+    "method": "GET",
+    "path": "/settings/partyinvite",
+    "url": "/chat/settings/partyinvite",
+    "summary": "Party invite settings",
+    "documentation": false
+  },
+  {
+    "service": "chat",
+    "method": "GET",
+    "path": "/thread/party",
+    "url": "/chat/thread/party",
+    "summary": "The caller’s current party thread (GetPartyChat)",
+    "documentation": false
+  },
+  {
+    "service": "chat",
+    "method": "POST",
+    "path": "/thread/party",
+    "url": "/chat/thread/party",
+    "summary": "Open a party thread for the caller (CreatePartyChat)",
+    "documentation": false
+  },
+  {
+    "service": "chat",
+    "method": "GET",
+    "path": "/thread/chatPrivacySetting",
+    "url": "/chat/thread/chatPrivacySetting",
+    "summary": "The caller’s chat privacy settings",
+    "documentation": false
+  },
+  {
+    "service": "chat",
+    "method": "PUT",
+    "path": "/thread/chatPrivacySetting",
+    "url": "/chat/thread/chatPrivacySetting",
+    "summary": "Set the caller’s chat privacy settings",
+    "documentation": false
+  },
+  {
+    "service": "chat",
+    "method": "GET",
+    "path": "/thread/checkCanSendDirectMessageWithPrivacySetting",
+    "url": "/chat/thread/checkCanSendDirectMessageWithPrivacySetting",
+    "summary": "May the caller DM this player?",
+    "documentation": false
+  },
+  {
+    "service": "chat",
+    "method": "POST",
+    "path": "/thread/withmembers",
+    "url": "/chat/thread/withmembers",
+    "summary": "Fetch or open the thread with exactly these members",
+    "documentation": false
+  },
+  {
+    "service": "chat",
+    "method": "GET",
+    "path": "/thread/:id{[0-9]+}",
+    "url": "/chat/thread/:id{[0-9]+}",
+    "summary": "One thread with its recent messages",
+    "documentation": false
+  },
+  {
+    "service": "chat",
+    "method": "POST",
+    "path": "/thread/:id{[0-9]+}",
+    "url": "/chat/thread/:id{[0-9]+}",
+    "summary": "Send a message to an existing thread (`/thread/{id}`)",
+    "documentation": false
+  },
+  {
+    "service": "chat",
+    "method": "POST",
+    "path": "/thread/:id{[0-9]+}/message",
+    "url": "/chat/thread/:id{[0-9]+}/message",
+    "summary": "Send a message to an existing thread (`/thread/{id}/message`)",
+    "documentation": false
+  },
+  {
+    "service": "chat",
+    "method": "POST",
+    "path": "/thread/:id{[0-9]+}/rename",
+    "url": "/chat/thread/:id{[0-9]+}/rename",
+    "summary": "Rename a thread",
+    "documentation": false
+  },
+  {
+    "service": "chat",
+    "method": "PUT",
+    "path": "/thread/:id{[0-9]+}/rename",
+    "url": "/chat/thread/:id{[0-9]+}/rename",
+    "summary": "Rename a thread",
+    "documentation": false
+  },
+  {
+    "service": "chat",
+    "method": "POST",
+    "path": "/thread/:id{[0-9]+}/leave",
+    "url": "/chat/thread/:id{[0-9]+}/leave",
+    "summary": "Leave a thread",
+    "documentation": false
+  },
+  {
+    "service": "chat",
+    "method": "DELETE",
+    "path": "/thread/:id{[0-9]+}/leave",
+    "url": "/chat/thread/:id{[0-9]+}/leave",
+    "summary": "Leave a thread",
+    "documentation": false
+  },
+  {
+    "service": "chat",
+    "method": "POST",
+    "path": "/thread/:id{[0-9]+}/snooze",
+    "url": "/chat/thread/:id{[0-9]+}/snooze",
+    "summary": "Snooze or unsnooze a thread",
+    "documentation": false
+  },
+  {
+    "service": "chat",
+    "method": "PUT",
+    "path": "/thread/:id{[0-9]+}/snooze",
+    "url": "/chat/thread/:id{[0-9]+}/snooze",
+    "summary": "Snooze or unsnooze a thread",
+    "documentation": false
+  },
+  {
+    "service": "chat",
+    "method": "PUT",
+    "path": "/thread/:id{[0-9]+}/favorite",
+    "url": "/chat/thread/:id{[0-9]+}/favorite",
+    "summary": "Favorite or unfavorite a thread",
+    "documentation": false
+  },
+  {
+    "service": "chat",
+    "method": "POST",
+    "path": "/thread/:id{[0-9]+}/favorite",
+    "url": "/chat/thread/:id{[0-9]+}/favorite",
+    "summary": "Favorite or unfavorite a thread",
+    "documentation": false
+  },
+  {
+    "service": "chat",
+    "method": "POST",
+    "path": "/thread/:id{[0-9]+}/member/:playerId{[0-9]+}",
+    "url": "/chat/thread/:id{[0-9]+}/member/:playerId{[0-9]+}",
+    "summary": "Add a player to a thread",
+    "documentation": false
+  },
+  {
+    "service": "chat",
+    "method": "PUT",
+    "path": "/thread/:id{[0-9]+}/read",
+    "url": "/chat/thread/:id{[0-9]+}/read",
+    "summary": "Mark a whole thread read",
+    "documentation": false
+  },
+  {
+    "service": "chat",
+    "method": "POST",
+    "path": "/thread/:id{[0-9]+}/read",
+    "url": "/chat/thread/:id{[0-9]+}/read",
+    "summary": "Mark a whole thread read",
+    "documentation": false
+  },
+  {
+    "service": "chat",
+    "method": "PUT",
+    "path": "/thread/:id{[0-9]+}/message/:messageId{[0-9]+}/read",
+    "url": "/chat/thread/:id{[0-9]+}/message/:messageId{[0-9]+}/read",
+    "summary": "Mark read up to a specific message",
+    "documentation": false
+  },
+  {
+    "service": "chat",
+    "method": "POST",
+    "path": "/thread/:id{[0-9]+}/message/:messageId{[0-9]+}/read",
+    "url": "/chat/thread/:id{[0-9]+}/message/:messageId{[0-9]+}/read",
+    "summary": "Mark read up to a specific message",
+    "documentation": false
+  },
+  {
+    "service": "chat",
+    "method": "GET",
+    "path": "/thread/:id{[0-9]+}/message",
+    "url": "/chat/thread/:id{[0-9]+}/message",
+    "summary": "A page of one thread’s messages",
+    "documentation": false
+  },
+  {
+    "service": "chat",
+    "method": "GET",
+    "path": "/openapi.json",
+    "url": "/chat/openapi.json",
+    "summary": "",
+    "documentation": true
+  },
+  {
+    "service": "clubs",
+    "method": "GET",
+    "path": "/club/home/me",
+    "url": "/clubs/club/home/me",
+    "summary": "The player’s home club",
+    "documentation": false
+  },
+  {
+    "service": "clubs",
+    "method": "PUT",
+    "path": "/club/home/me",
+    "url": "/clubs/club/home/me",
+    "summary": "Set the player’s home club",
+    "documentation": false
+  },
+  {
+    "service": "clubs",
+    "method": "DELETE",
+    "path": "/club/home/me",
+    "url": "/clubs/club/home/me",
+    "summary": "Clear the player’s home club",
+    "documentation": false
+  },
+  {
+    "service": "clubs",
+    "method": "GET",
+    "path": "/subscription/mine/member",
+    "url": "/clubs/subscription/mine/member",
+    "summary": "The caller’s club-subscription memberships",
+    "documentation": false
+  },
+  {
+    "service": "clubs",
+    "method": "GET",
+    "path": "/subscription/details/:accountId{[0-9]+}",
+    "url": "/clubs/subscription/details/:accountId{[0-9]+}",
+    "summary": "Subscription details for an account",
+    "documentation": false
+  },
+  {
+    "service": "clubs",
+    "method": "GET",
+    "path": "/subscription/details/:subscription",
+    "url": "/clubs/subscription/details/:subscription",
+    "summary": "Details for a named subscription",
+    "documentation": false
+  },
+  {
+    "service": "clubs",
+    "method": "GET",
+    "path": "/subscription/subscriberCount/:accountId{[0-9]+}",
+    "url": "/clubs/subscription/subscriberCount/:accountId{[0-9]+}",
+    "summary": "Subscriber count for an account",
+    "documentation": false
+  },
+  {
+    "service": "clubs",
+    "method": "GET",
+    "path": "/announcements/v2/mine/unread",
+    "url": "/clubs/announcements/v2/mine/unread",
+    "summary": "The player’s clubs with unread announcements",
+    "documentation": false
+  },
+  {
+    "service": "clubs",
+    "method": "GET",
+    "path": "/announcements/v2/subscription/mine/unread",
+    "url": "/clubs/announcements/v2/subscription/mine/unread",
+    "summary": "The player’s subscribed clubs with unread announcements",
+    "documentation": false
+  },
+  {
+    "service": "clubs",
+    "method": "GET",
+    "path": "/announcements/club/:clubId{[0-9]+}",
+    "url": "/clubs/announcements/club/:clubId{[0-9]+}",
+    "summary": "A club’s announcements",
+    "documentation": false
+  },
+  {
+    "service": "clubs",
+    "method": "POST",
+    "path": "/announcements/club/:clubId{[0-9]+}",
+    "url": "/clubs/announcements/club/:clubId{[0-9]+}",
+    "summary": "Post an announcement to a club",
+    "documentation": false
+  },
+  {
+    "service": "clubs",
+    "method": "GET",
+    "path": "/club/mine/member",
+    "url": "/clubs/club/mine/member",
+    "summary": "The clubs the player is a member of",
+    "documentation": false
+  },
+  {
+    "service": "clubs",
+    "method": "GET",
+    "path": "/club/mine/created",
+    "url": "/clubs/club/mine/created",
+    "summary": "The clubs the player created",
+    "documentation": false
+  },
+  {
+    "service": "clubs",
+    "method": "GET",
+    "path": "/club/search",
+    "url": "/clubs/club/search",
+    "summary": "Club search / browse",
+    "documentation": false
+  },
+  {
+    "service": "clubs",
+    "method": "GET",
+    "path": "/club/categoryTags",
+    "url": "/clubs/club/categoryTags",
+    "summary": "Club category tags",
+    "documentation": false
+  },
+  {
+    "service": "clubs",
+    "method": "POST",
+    "path": "/club/create",
+    "url": "/clubs/club/create",
+    "summary": "Create a club",
+    "documentation": false
+  },
+  {
+    "service": "clubs",
+    "method": "PUT",
+    "path": "/club/:clubId{[0-9]+}/modifydetails",
+    "url": "/clubs/club/:clubId{[0-9]+}/modifydetails",
+    "summary": "Edit a club’s details",
+    "documentation": false
+  },
+  {
+    "service": "clubs",
+    "method": "PUT",
+    "path": "/club/:clubId{[0-9]+}/modify",
+    "url": "/clubs/club/:clubId{[0-9]+}/modify",
+    "summary": "Edit a club’s details",
+    "documentation": false
+  },
+  {
+    "service": "clubs",
+    "method": "GET",
+    "path": "/club/:clubId{[0-9]+}/details",
+    "url": "/clubs/club/:clubId{[0-9]+}/details",
+    "summary": "A club’s full details",
+    "documentation": false
+  },
+  {
+    "service": "clubs",
+    "method": "GET",
+    "path": "/club/:clubId{[0-9]+}/hasDisabledClubChat",
+    "url": "/clubs/club/:clubId{[0-9]+}/hasDisabledClubChat",
+    "summary": "Whether the club has turned club chat off",
+    "documentation": false
+  },
+  {
+    "service": "clubs",
+    "method": "GET",
+    "path": "/club/:clubId{[0-9]+}/members",
+    "url": "/clubs/club/:clubId{[0-9]+}/members",
+    "summary": "A club’s members",
+    "documentation": false
+  },
+  {
+    "service": "clubs",
+    "method": "PUT",
+    "path": "/club/:clubId{[0-9]+}/minlevel",
+    "url": "/clubs/club/:clubId{[0-9]+}/minlevel",
+    "summary": "Set the club’s minimum join level",
+    "documentation": false
+  },
+  {
+    "service": "clubs",
+    "method": "PUT",
+    "path": "/club/:clubId{[0-9]+}/clubhouse",
+    "url": "/clubs/club/:clubId{[0-9]+}/clubhouse",
+    "summary": "Set or clear the club’s clubhouse room",
+    "documentation": false
+  },
+  {
+    "service": "clubs",
+    "method": "DELETE",
+    "path": "/club/:clubId{[0-9]+}/clubhouse",
+    "url": "/clubs/club/:clubId{[0-9]+}/clubhouse",
+    "summary": "Set or clear the club’s clubhouse room",
+    "documentation": false
+  },
+  {
+    "service": "clubs",
+    "method": "GET",
+    "path": "/club/:clubId{[0-9]+}/mainimage",
+    "url": "/clubs/club/:clubId{[0-9]+}/mainimage",
+    "summary": "Read the club’s main image",
+    "documentation": false
+  },
+  {
+    "service": "clubs",
+    "method": "PUT",
+    "path": "/club/:clubId{[0-9]+}/mainimage",
+    "url": "/clubs/club/:clubId{[0-9]+}/mainimage",
+    "summary": "Set the club’s main image",
+    "documentation": false
+  },
+  {
+    "service": "clubs",
+    "method": "PUT",
+    "path": "/club/:clubId{[0-9]+}/additionalimage/:index{[0-9]+}",
+    "url": "/clubs/club/:clubId{[0-9]+}/additionalimage/:index{[0-9]+}",
+    "summary": "Set or remove one of the club’s gallery images",
+    "documentation": false
+  },
+  {
+    "service": "clubs",
+    "method": "DELETE",
+    "path": "/club/:clubId{[0-9]+}/additionalimage/:index{[0-9]+}",
+    "url": "/clubs/club/:clubId{[0-9]+}/additionalimage/:index{[0-9]+}",
+    "summary": "Set or remove one of the club’s gallery images",
+    "documentation": false
+  },
+  {
+    "service": "clubs",
+    "method": "GET",
+    "path": "/club/:clubId{[0-9]+}",
+    "url": "/clubs/club/:clubId{[0-9]+}",
+    "summary": "A single club by id",
+    "documentation": false
+  },
+  {
+    "service": "clubs",
+    "method": "DELETE",
+    "path": "/club/:clubId{[0-9]+}",
+    "url": "/clubs/club/:clubId{[0-9]+}",
+    "summary": "Delete a club",
+    "documentation": false
+  },
+  {
+    "service": "clubs",
+    "method": "PUT",
+    "path": "/club/:clubId{[0-9]+}/members/requesttojoin",
+    "url": "/clubs/club/:clubId{[0-9]+}/members/requesttojoin",
+    "summary": "Ask to join a club",
+    "documentation": false
+  },
+  {
+    "service": "clubs",
+    "method": "PUT",
+    "path": "/club/:clubId{[0-9]+}/members/invite",
+    "url": "/clubs/club/:clubId{[0-9]+}/members/invite",
+    "summary": "Invite an account into the club",
+    "documentation": false
+  },
+  {
+    "service": "clubs",
+    "method": "POST",
+    "path": "/club/:clubId{[0-9]+}/members/leave",
+    "url": "/clubs/club/:clubId{[0-9]+}/members/leave",
+    "summary": "Leave a club",
+    "documentation": false
+  },
+  {
+    "service": "clubs",
+    "method": "POST",
+    "path": "/club/:clubId{[0-9]+}/join",
+    "url": "/clubs/club/:clubId{[0-9]+}/join",
+    "summary": "Join a club",
+    "documentation": false
+  },
+  {
+    "service": "clubs",
+    "method": "POST",
+    "path": "/club/:clubId{[0-9]+}/leave",
+    "url": "/clubs/club/:clubId{[0-9]+}/leave",
+    "summary": "Leave a club (bare-club form)",
+    "documentation": false
+  },
+  {
+    "service": "clubs",
+    "method": "GET",
+    "path": "/openapi.json",
+    "url": "/clubs/openapi.json",
+    "summary": "",
+    "documentation": true
+  },
+  {
+    "service": "commerce",
+    "method": "GET",
+    "path": "/",
+    "url": "/commerce/",
+    "summary": "Health check",
+    "documentation": false
+  },
+  {
+    "service": "commerce",
+    "method": "GET",
+    "path": "/purchase/v1/hasspentmoney",
+    "url": "/commerce/purchase/v1/hasspentmoney",
+    "summary": "Whether the player has ever spent money",
+    "documentation": false
+  },
+  {
+    "service": "commerce",
+    "method": "POST",
+    "path": "/purchase/v1/initiatepurchase",
+    "url": "/commerce/purchase/v1/initiatepurchase",
+    "summary": "Begin a purchase",
+    "documentation": false
+  },
+  {
+    "service": "commerce",
+    "method": "GET",
+    "path": "/api/catalog/v1/all",
+    "url": "/commerce/api/catalog/v1/all",
+    "summary": "The purchasable SKU catalog",
+    "documentation": false
+  },
+  {
+    "service": "commerce",
+    "method": "GET",
+    "path": "/purchase/v1/cleanuppending",
+    "url": "/commerce/purchase/v1/cleanuppending",
+    "summary": "Reconcile pending purchases (no-op)",
+    "documentation": false
+  },
+  {
+    "service": "commerce",
+    "method": "POST",
+    "path": "/purchase/v1/cleanuppending",
+    "url": "/commerce/purchase/v1/cleanuppending",
+    "summary": "Reconcile pending purchases (no-op)",
+    "documentation": false
+  },
+  {
+    "service": "commerce",
+    "method": "GET",
+    "path": "/purchasecampaign/allcurrent/v2",
+    "url": "/commerce/purchasecampaign/allcurrent/v2",
+    "summary": "Current purchase campaigns",
+    "documentation": false
+  },
+  {
+    "service": "commerce",
+    "method": "GET",
+    "path": "/reminder/currentTokenBundles/v2",
+    "url": "/commerce/reminder/currentTokenBundles/v2",
+    "summary": "Token-bundle purchase reminders",
+    "documentation": false
+  },
+  {
+    "service": "commerce",
+    "method": "GET",
+    "path": "/openapi.json",
+    "url": "/commerce/openapi.json",
+    "summary": "",
+    "documentation": true
+  },
+  {
+    "service": "datacollection",
+    "method": "GET",
+    "path": "/",
+    "url": "/datacollection/",
+    "summary": "",
+    "documentation": false
+  },
+  {
+    "service": "datacollection",
+    "method": "POST",
+    "path": "/data/event",
+    "url": "/datacollection/data/event",
+    "summary": "",
+    "documentation": false
+  },
+  {
+    "service": "datacollection",
+    "method": "POST",
+    "path": "/data/events",
+    "url": "/datacollection/data/events",
+    "summary": "",
+    "documentation": false
+  },
+  {
+    "service": "datacollection",
+    "method": "GET",
+    "path": "/sampling",
+    "url": "/datacollection/sampling",
+    "summary": "",
+    "documentation": false
+  },
+  {
+    "service": "discovery",
+    "method": "GET",
+    "path": "/",
+    "url": "/discovery/",
+    "summary": "Health check",
+    "documentation": false
+  },
+  {
+    "service": "discovery",
+    "method": "GET",
+    "path": "/sections/bulk",
+    "url": "/discovery/sections/bulk",
+    "summary": "Look up sections by id",
+    "documentation": false
+  },
+  {
+    "service": "discovery",
+    "method": "GET",
+    "path": "/sections/pagesource/:type",
+    "url": "/discovery/sections/pagesource/:type",
+    "summary": "Section layout for a page source",
+    "documentation": false
+  },
+  {
+    "service": "discovery",
+    "method": "GET",
+    "path": "/openapi.json",
+    "url": "/discovery/openapi.json",
+    "summary": "",
+    "documentation": true
+  },
+  {
+    "service": "econ",
+    "method": "POST",
+    "path": "/api/avatar/v1/lockeditems/bulk",
+    "url": "/econ/api/avatar/v1/lockeditems/bulk",
+    "summary": "Locked avatar items in bulk",
+    "documentation": false
+  },
+  {
+    "service": "econ",
+    "method": "GET",
+    "path": "/api/avatar/v1/defaultunlocked",
+    "url": "/econ/api/avatar/v1/defaultunlocked",
+    "summary": "Default-unlocked avatar items",
+    "documentation": false
+  },
+  {
+    "service": "econ",
+    "method": "GET",
+    "path": "/api/avatar/v1/defaultbaseavataritems",
+    "url": "/econ/api/avatar/v1/defaultbaseavataritems",
+    "summary": "Default base avatar items",
+    "documentation": false
+  },
+  {
+    "service": "econ",
+    "method": "GET",
+    "path": "/api/avatar/v4/items",
+    "url": "/econ/api/avatar/v4/items",
+    "summary": "The player’s avatar items",
+    "documentation": false
+  },
+  {
+    "service": "econ",
+    "method": "GET",
+    "path": "/econ/customAvatarItems/v1/owned",
+    "url": "/econ/econ/customAvatarItems/v1/owned",
+    "summary": "Owned custom avatar items",
+    "documentation": false
+  },
+  {
+    "service": "econ",
+    "method": "GET",
+    "path": "/api/objectives/v1/myprogress",
+    "url": "/econ/api/objectives/v1/myprogress",
+    "summary": "Objectives progress",
+    "documentation": false
+  },
+  {
+    "service": "econ",
+    "method": "GET",
+    "path": "/api/objectives/v1/cleargroup",
+    "url": "/econ/api/objectives/v1/cleargroup",
+    "summary": "Clear an objectives group (no-op)",
+    "documentation": false
+  },
+  {
+    "service": "econ",
+    "method": "POST",
+    "path": "/api/objectives/v1/cleargroup",
+    "url": "/econ/api/objectives/v1/cleargroup",
+    "summary": "Clear an objectives group (no-op)",
+    "documentation": false
+  },
+  {
+    "service": "econ",
+    "method": "POST",
+    "path": "/api/objectives/v1/updateobjective",
+    "url": "/econ/api/objectives/v1/updateobjective",
+    "summary": "Report objective progress",
+    "documentation": false
+  },
+  {
+    "service": "econ",
+    "method": "GET",
+    "path": "/api/avatar/v2",
+    "url": "/econ/api/avatar/v2",
+    "summary": "The player’s own avatar",
+    "documentation": false
+  },
+  {
+    "service": "econ",
+    "method": "POST",
+    "path": "/api/avatar/v2/set",
+    "url": "/econ/api/avatar/v2/set",
+    "summary": "Save the player’s avatar",
+    "documentation": false
+  },
+  {
+    "service": "econ",
+    "method": "GET",
+    "path": "/api/checklist/v1/current",
+    "url": "/econ/api/checklist/v1/current",
+    "summary": "NUX checklist",
+    "documentation": false
+  },
+  {
+    "service": "econ",
+    "method": "GET",
+    "path": "/api/checklist/v2/current",
+    "url": "/econ/api/checklist/v2/current",
+    "summary": "NUX checklist",
+    "documentation": false
+  },
+  {
+    "service": "econ",
+    "method": "POST",
+    "path": "/api/checklist/v1/complete",
+    "url": "/econ/api/checklist/v1/complete",
+    "summary": "Complete a checklist row (stub)",
+    "documentation": false
+  },
+  {
+    "service": "econ",
+    "method": "POST",
+    "path": "/api/checklist/v2/complete",
+    "url": "/econ/api/checklist/v2/complete",
+    "summary": "Complete a checklist row (stub)",
+    "documentation": false
+  },
+  {
+    "service": "econ",
+    "method": "GET",
+    "path": "/api/itemWishlists/v1/wishlist/me",
+    "url": "/econ/api/itemWishlists/v1/wishlist/me",
+    "summary": "The player’s item wishlist",
+    "documentation": false
+  },
+  {
+    "service": "econ",
+    "method": "GET",
+    "path": "/api/itemWishlists/v1/wishlist/:accountId{[0-9]+}",
+    "url": "/econ/api/itemWishlists/v1/wishlist/:accountId{[0-9]+}",
+    "summary": "Another player’s item wishlist",
+    "documentation": false
+  },
+  {
+    "service": "econ",
+    "method": "GET",
+    "path": "/api/avatar/v3/saved",
+    "url": "/econ/api/avatar/v3/saved",
+    "summary": "The player’s saved outfits",
+    "documentation": false
+  },
+  {
+    "service": "econ",
+    "method": "POST",
+    "path": "/api/avatar/v3/saved/set",
+    "url": "/econ/api/avatar/v3/saved/set",
+    "summary": "Save an outfit into a slot",
+    "documentation": false
+  },
+  {
+    "service": "econ",
+    "method": "POST",
+    "path": "/api/avatar/v4/saved/set",
+    "url": "/econ/api/avatar/v4/saved/set",
+    "summary": "Save an outfit into a slot (v4)",
+    "documentation": false
+  },
+  {
+    "service": "econ",
+    "method": "GET",
+    "path": "/api/avatar/v2/gifts",
+    "url": "/econ/api/avatar/v2/gifts",
+    "summary": "Pending gift boxes",
+    "documentation": false
+  },
+  {
+    "service": "econ",
+    "method": "POST",
+    "path": "/api/avatar/v2/gifts/consume",
+    "url": "/econ/api/avatar/v2/gifts/consume",
+    "summary": "Open (consume) a gift box",
+    "documentation": false
+  },
+  {
+    "service": "econ",
+    "method": "GET",
+    "path": "/api/avatar/v2/:id",
+    "url": "/econ/api/avatar/v2/:id",
+    "summary": "Another player’s avatar (render subset)",
+    "documentation": false
+  },
+  {
+    "service": "econ",
+    "method": "GET",
+    "path": "/api/equipment/v2/getUnlocked",
+    "url": "/econ/api/equipment/v2/getUnlocked",
+    "summary": "Unlocked equipment",
+    "documentation": false
+  },
+  {
+    "service": "econ",
+    "method": "PUT",
+    "path": "/api/equipment/v1/update",
+    "url": "/econ/api/equipment/v1/update",
+    "summary": "Update owned equipment",
+    "documentation": false
+  },
+  {
+    "service": "econ",
+    "method": "POST",
+    "path": "/api/equipment/v1/update",
+    "url": "/econ/api/equipment/v1/update",
+    "summary": "Update owned equipment",
+    "documentation": false
+  },
+  {
+    "service": "econ",
+    "method": "GET",
+    "path": "/api/roomconsumables/v1/roomConsumable/room/:roomId",
+    "url": "/econ/api/roomconsumables/v1/roomConsumable/room/:roomId",
+    "summary": "Room consumables",
+    "documentation": false
+  },
+  {
+    "service": "econ",
+    "method": "GET",
+    "path": "/api/roomconsumables/v1/roomConsumable/room/:roomId/me",
+    "url": "/econ/api/roomconsumables/v1/roomConsumable/room/:roomId/me",
+    "summary": "The caller’s room consumables",
+    "documentation": false
+  },
+  {
+    "service": "econ",
+    "method": "GET",
+    "path": "/api/roomcurrencies/v1/currencies",
+    "url": "/econ/api/roomcurrencies/v1/currencies",
+    "summary": "Room currencies",
+    "documentation": false
+  },
+  {
+    "service": "econ",
+    "method": "GET",
+    "path": "/api/roomcurrencies/v1/getAllBalances",
+    "url": "/econ/api/roomcurrencies/v1/getAllBalances",
+    "summary": "Room balances",
+    "documentation": false
+  },
+  {
+    "service": "econ",
+    "method": "GET",
+    "path": "/econ/roomInventory/room/:roomId",
+    "url": "/econ/econ/roomInventory/room/:roomId",
+    "summary": "A room’s inventory",
+    "documentation": false
+  },
+  {
+    "service": "econ",
+    "method": "GET",
+    "path": "/econ/roomInventory/room/:roomId/player",
+    "url": "/econ/econ/roomInventory/room/:roomId/player",
+    "summary": "The caller’s inventory in a room",
+    "documentation": false
+  },
+  {
+    "service": "econ",
+    "method": "GET",
+    "path": "/econ/roomInventoryItemTags/room/:roomId",
+    "url": "/econ/econ/roomInventoryItemTags/room/:roomId",
+    "summary": "A room’s inventory item tags",
+    "documentation": false
+  },
+  {
+    "service": "econ",
+    "method": "GET",
+    "path": "/econ/roomOffer/room/:roomId",
+    "url": "/econ/econ/roomOffer/room/:roomId",
+    "summary": "A room’s offers",
+    "documentation": false
+  },
+  {
+    "service": "econ",
+    "method": "GET",
+    "path": "/econ/roomOffer/room/:roomId/purchaseCounts",
+    "url": "/econ/econ/roomOffer/room/:roomId/purchaseCounts",
+    "summary": "Per-offer purchase counts for a room",
+    "documentation": false
+  },
+  {
+    "service": "econ",
+    "method": "GET",
+    "path": "/econ/roomGiftDropShops/room/:roomId",
+    "url": "/econ/econ/roomGiftDropShops/room/:roomId",
+    "summary": "A room’s gift-drop shops",
+    "documentation": false
+  },
+  {
+    "service": "econ",
+    "method": "GET",
+    "path": "/econ/roomEconConfig/:roomId",
+    "url": "/econ/econ/roomEconConfig/:roomId",
+    "summary": "A room’s economy config",
+    "documentation": false
+  },
+  {
+    "service": "econ",
+    "method": "GET",
+    "path": "/api/ugcPurchasables/v1/items/room/:roomId",
+    "url": "/econ/api/ugcPurchasables/v1/items/room/:roomId",
+    "summary": "A room’s UGC purchasables",
+    "documentation": false
+  },
+  {
+    "service": "econ",
+    "method": "POST",
+    "path": "/api/ugcPurchasables/v1/items/bulk",
+    "url": "/econ/api/ugcPurchasables/v1/items/bulk",
+    "summary": "Look up UGC purchasables by id",
+    "documentation": false
+  },
+  {
+    "service": "econ",
+    "method": "POST",
+    "path": "/api/items/purchaseInfos",
+    "url": "/econ/api/items/purchaseInfos",
+    "summary": "Purchase info for a bag of items",
+    "documentation": false
+  },
+  {
+    "service": "econ",
+    "method": "GET",
+    "path": "/api/consumables/v2/getUnlocked",
+    "url": "/econ/api/consumables/v2/getUnlocked",
+    "summary": "Unlocked consumables",
+    "documentation": false
+  },
+  {
+    "service": "econ",
+    "method": "POST",
+    "path": "/api/consumables/v1/consume",
+    "url": "/econ/api/consumables/v1/consume",
+    "summary": "Consume a quantity of an owned consumable",
+    "documentation": false
+  },
+  {
+    "service": "econ",
+    "method": "GET",
+    "path": "/api/storefronts/v4/balance/:currencyType",
+    "url": "/econ/api/storefronts/v4/balance/:currencyType",
+    "summary": "Currency balance",
+    "documentation": false
+  },
+  {
+    "service": "econ",
+    "method": "GET",
+    "path": "/api/storefronts/v3/giftdropstore/:id",
+    "url": "/econ/api/storefronts/v3/giftdropstore/:id",
+    "summary": "Gift-drop storefront catalog",
+    "documentation": false
+  },
+  {
+    "service": "econ",
+    "method": "POST",
+    "path": "/api/storefronts/v2/buyItem",
+    "url": "/econ/api/storefronts/v2/buyItem",
+    "summary": "Buy a storefront item",
+    "documentation": false
+  },
+  {
+    "service": "econ",
+    "method": "POST",
+    "path": "/api/items/bulkpurchase",
+    "url": "/econ/api/items/bulkpurchase",
+    "summary": "Buy a bag of storefront items",
+    "documentation": false
+  },
+  {
+    "service": "econ",
+    "method": "GET",
+    "path": "/api/storefronts/v2/buyInvention",
+    "url": "/econ/api/storefronts/v2/buyInvention",
+    "summary": "Buy an invention",
+    "documentation": false
+  },
+  {
+    "service": "econ",
+    "method": "POST",
+    "path": "/api/storefronts/v3/buyInvention",
+    "url": "/econ/api/storefronts/v3/buyInvention",
+    "summary": "Buy an invention (JSON body)",
+    "documentation": false
+  },
+  {
+    "service": "econ",
+    "method": "GET",
+    "path": "/api/storefronts/v1/adcarouselitems",
+    "url": "/econ/api/storefronts/v1/adcarouselitems",
+    "summary": "Storefront ad-carousel items",
+    "documentation": false
+  },
+  {
+    "service": "econ",
+    "method": "GET",
+    "path": "/api/challenge/v2/getCurrent",
+    "url": "/econ/api/challenge/v2/getCurrent",
+    "summary": "Current weekly challenge",
+    "documentation": false
+  },
+  {
+    "service": "econ",
+    "method": "POST",
+    "path": "/api/challenge/v2/updateProgress",
+    "url": "/econ/api/challenge/v2/updateProgress",
+    "summary": "Report weekly-challenge progress",
+    "documentation": false
+  },
+  {
+    "service": "econ",
+    "method": "GET",
+    "path": "/api/gamerewards/v1/pending",
+    "url": "/econ/api/gamerewards/v1/pending",
+    "summary": "Pending game rewards",
+    "documentation": false
+  },
+  {
+    "service": "econ",
+    "method": "POST",
+    "path": "/api/gamerewards/v1/request",
+    "url": "/econ/api/gamerewards/v1/request",
+    "summary": "Request a game reward",
+    "documentation": false
+  },
+  {
+    "service": "econ",
+    "method": "GET",
+    "path": "/api/roomkeys/v1/mine",
+    "url": "/econ/api/roomkeys/v1/mine",
+    "summary": "The player’s room keys",
+    "documentation": false
+  },
+  {
+    "service": "econ",
+    "method": "GET",
+    "path": "/api/roomkeys/v1/room",
+    "url": "/econ/api/roomkeys/v1/room",
+    "summary": "Room keys for a room",
+    "documentation": false
+  },
+  {
+    "service": "econ",
+    "method": "GET",
+    "path": "/api/CampusCard/v1/SignUpBonus",
+    "url": "/econ/api/CampusCard/v1/SignUpBonus",
+    "summary": "Rec Room Plus sign-up bonus",
+    "documentation": false
+  },
+  {
+    "service": "econ",
+    "method": "POST",
+    "path": "/api/CampusCard/v1/UpdateAndGetSubscription",
+    "url": "/econ/api/CampusCard/v1/UpdateAndGetSubscription",
+    "summary": "Subscription lookup",
+    "documentation": false
+  },
+  {
+    "service": "econ",
+    "method": "GET",
+    "path": "/api/subscriptionseasons/v1/seasons/current",
+    "url": "/econ/api/subscriptionseasons/v1/seasons/current",
+    "summary": "Current subscription seasons",
+    "documentation": false
+  },
+  {
+    "service": "econ",
+    "method": "GET",
+    "path": "/api/makerai/checkfreetrialeligibility",
+    "url": "/econ/api/makerai/checkfreetrialeligibility",
+    "summary": "Maker AI free-trial eligibility",
+    "documentation": false
+  },
+  {
+    "service": "econ",
+    "method": "GET",
+    "path": "/api/incentivizedreferrals/progress",
+    "url": "/econ/api/incentivizedreferrals/progress",
+    "summary": "The caller’s referral-reward progress",
+    "documentation": false
+  },
+  {
+    "service": "econ",
+    "method": "GET",
+    "path": "/api/influencerpartnerprogram/influencers",
+    "url": "/econ/api/influencerpartnerprogram/influencers",
+    "summary": "Every influencer in the partner program",
+    "documentation": false
+  },
+  {
+    "service": "econ",
+    "method": "GET",
+    "path": "/api/influencerpartnerprogram/influencer",
+    "url": "/econ/api/influencerpartnerprogram/influencer",
+    "summary": "An account’s influencer partner program tier",
+    "documentation": false
+  },
+  {
+    "service": "econ",
+    "method": "GET",
+    "path": "/api/influencerpartnerprogram/myinfluencer",
+    "url": "/econ/api/influencerpartnerprogram/myinfluencer",
+    "summary": "The caller’s influencer partner program tier",
+    "documentation": false
+  },
+  {
+    "service": "econ",
+    "method": "GET",
+    "path": "/openapi.json",
+    "url": "/econ/openapi.json",
+    "summary": "",
+    "documentation": true
+  },
+  {
+    "service": "img",
+    "method": "GET",
+    "path": "/",
+    "url": "/img/",
+    "summary": "Service status",
+    "documentation": false
+  },
+  {
+    "service": "img",
+    "method": "GET",
+    "path": "/openapi.json",
+    "url": "/img/openapi.json",
+    "summary": "",
+    "documentation": true
+  },
+  {
+    "service": "img",
+    "method": "GET",
+    "path": "/:key{.+}",
+    "url": "/img/:key{.+}",
+    "summary": "Serve an image by key",
+    "documentation": false
+  },
+  {
+    "service": "leaderboard",
+    "method": "GET",
+    "path": "/",
+    "url": "/leaderboard/",
+    "summary": "Health check",
+    "documentation": false
+  },
+  {
+    "service": "leaderboard",
+    "method": "POST",
+    "path": "/leaderboard/GetNearbyScores",
+    "url": "/leaderboard/leaderboard/GetNearbyScores",
+    "summary": "The scores around a player",
+    "documentation": false
+  },
+  {
+    "service": "leaderboard",
+    "method": "POST",
+    "path": "/leaderboard/GetRanks",
+    "url": "/leaderboard/leaderboard/GetRanks",
+    "summary": "A page of the board",
+    "documentation": false
+  },
+  {
+    "service": "leaderboard",
+    "method": "POST",
+    "path": "/leaderboard/GetPlayerRank",
+    "url": "/leaderboard/leaderboard/GetPlayerRank",
+    "summary": "One player’s rank",
+    "documentation": false
+  },
+  {
+    "service": "leaderboard",
+    "method": "POST",
+    "path": "/leaderboard/CheckAndSetStat",
+    "url": "/leaderboard/leaderboard/CheckAndSetStat",
+    "summary": "Write a player’s stat",
+    "documentation": false
+  },
+  {
+    "service": "leaderboard",
+    "method": "GET",
+    "path": "/openapi.json",
+    "url": "/leaderboard/openapi.json",
+    "summary": "",
+    "documentation": true
+  },
+  {
+    "service": "link",
+    "method": "GET",
+    "path": "/",
+    "url": "/link/",
+    "summary": "",
+    "documentation": false
+  },
+  {
+    "service": "lists",
+    "method": "GET",
+    "path": "/",
+    "url": "/lists/",
+    "summary": "Health check",
+    "documentation": false
+  },
+  {
+    "service": "lists",
+    "method": "GET",
+    "path": "/curatedlists/bulk",
+    "url": "/lists/curatedlists/bulk",
+    "summary": "Curated lists by id",
+    "documentation": false
+  },
+  {
+    "service": "lists",
+    "method": "GET",
+    "path": "/curatedlists",
+    "url": "/lists/curatedlists",
+    "summary": "One curated list",
+    "documentation": false
+  },
+  {
+    "service": "lists",
+    "method": "PUT",
+    "path": "/curatedlists/:name/items/:itemId/createlistifneeded",
+    "url": "/lists/curatedlists/:name/items/:itemId/createlistifneeded",
+    "summary": "Save an item into the caller’s list",
+    "documentation": false
+  },
+  {
+    "service": "lists",
+    "method": "GET",
+    "path": "/algorithmiclists/:list",
+    "url": "/lists/algorithmiclists/:list",
+    "summary": "One discovery row’s contents",
+    "documentation": false
+  },
+  {
+    "service": "lists",
+    "method": "POST",
+    "path": "/contextualfeatures",
+    "url": "/lists/contextualfeatures",
+    "summary": "Acknowledge a contextual-features post",
+    "documentation": false
+  },
+  {
+    "service": "lists",
+    "method": "GET",
+    "path": "/openapi.json",
+    "url": "/lists/openapi.json",
+    "summary": "",
+    "documentation": true
+  },
+  {
+    "service": "match",
+    "method": "POST",
+    "path": "/player/login",
+    "url": "/match/player/login",
+    "summary": "Record the session login lock",
+    "documentation": false
+  },
+  {
+    "service": "match",
+    "method": "POST",
+    "path": "/player/exclusivelogin",
+    "url": "/match/player/exclusivelogin",
+    "summary": "Exclusive-login ack (no-op)",
+    "documentation": false
+  },
+  {
+    "service": "match",
+    "method": "POST",
+    "path": "/player/logout",
+    "url": "/match/player/logout",
+    "summary": "Clear presence on logout",
+    "documentation": false
+  },
+  {
+    "service": "match",
+    "method": "POST",
+    "path": "/player/notifydisconnect",
+    "url": "/match/player/notifydisconnect",
+    "summary": "Photon disconnect notification",
+    "documentation": false
+  },
+  {
+    "service": "match",
+    "method": "GET",
+    "path": "/tachyon",
+    "url": "/match/tachyon",
+    "summary": "The room instance a player is in",
+    "documentation": false
+  },
+  {
+    "service": "match",
+    "method": "GET",
+    "path": "/clubhousesearch/mostactivenow",
+    "url": "/match/clubhousesearch/mostactivenow",
+    "summary": "The busiest clubhouses right now",
+    "documentation": false
+  },
+  {
+    "service": "match",
+    "method": "GET",
+    "path": "/player",
+    "url": "/match/player",
+    "summary": "Batch player presence lookup",
+    "documentation": false
+  },
+  {
+    "service": "match",
+    "method": "POST",
+    "path": "/player/heartbeat",
+    "url": "/match/player/heartbeat",
+    "summary": "Presence heartbeat",
+    "documentation": false
+  },
+  {
+    "service": "match",
+    "method": "PUT",
+    "path": "/player/statusvisibility",
+    "url": "/match/player/statusvisibility",
+    "summary": "Set status visibility",
+    "documentation": false
+  },
+  {
+    "service": "match",
+    "method": "GET",
+    "path": "/player/avoidjuniors",
+    "url": "/match/player/avoidjuniors",
+    "summary": "The player’s “avoid juniors” preference",
+    "documentation": false
+  },
+  {
+    "service": "match",
+    "method": "PUT",
+    "path": "/player/avoidjuniors",
+    "url": "/match/player/avoidjuniors",
+    "summary": "Set the player’s “avoid juniors” preference",
+    "documentation": false
+  },
+  {
+    "service": "match",
+    "method": "POST",
+    "path": "/matchmake/club/:clubId{[0-9]+}",
+    "url": "/match/matchmake/club/:clubId{[0-9]+}",
+    "summary": "Matchmake into a club’s clubhouse",
+    "documentation": false
+  },
+  {
+    "service": "match",
+    "method": "POST",
+    "path": "/matchmake/event/:eventId{[0-9]+}",
+    "url": "/match/matchmake/event/:eventId{[0-9]+}",
+    "summary": "Matchmake into a player event",
+    "documentation": false
+  },
+  {
+    "service": "match",
+    "method": "POST",
+    "path": "/matchmake/player/:playerId{[0-9]+}",
+    "url": "/match/matchmake/player/:playerId{[0-9]+}",
+    "summary": "Follow a friend into their room",
+    "documentation": false
+  },
+  {
+    "service": "match",
+    "method": "POST",
+    "path": "/matchmake/v2/player/:playerId{[0-9]+}",
+    "url": "/match/matchmake/v2/player/:playerId{[0-9]+}",
+    "summary": "Join the player who invited you (v2)",
+    "documentation": false
+  },
+  {
+    "service": "match",
+    "method": "POST",
+    "path": "/matchmake/invite/:inviteId{[0-9]+}",
+    "url": "/match/matchmake/invite/:inviteId{[0-9]+}",
+    "summary": "Accept a game invite",
+    "documentation": false
+  },
+  {
+    "service": "match",
+    "method": "POST",
+    "path": "/matchmake/instance/:instanceId{[0-9]+}",
+    "url": "/match/matchmake/instance/:instanceId{[0-9]+}",
+    "summary": "Join a specific instance (owner only)",
+    "documentation": false
+  },
+  {
+    "service": "match",
+    "method": "POST",
+    "path": "/matchmake/room/:roomId/:subRoomId{[0-9]+}",
+    "url": "/match/matchmake/room/:roomId/:subRoomId{[0-9]+}",
+    "summary": "Matchmake into a specific subroom",
+    "documentation": false
+  },
+  {
+    "service": "match",
+    "method": "POST",
+    "path": "/matchmake/room/:roomId",
+    "url": "/match/matchmake/room/:roomId",
+    "summary": "Matchmake into a room (default subroom)",
+    "documentation": false
+  },
+  {
+    "service": "match",
+    "method": "POST",
+    "path": "/matchmake/v2/room/:roomId/:subRoomId{[0-9]+}",
+    "url": "/match/matchmake/v2/room/:roomId/:subRoomId{[0-9]+}",
+    "summary": "Matchmake into a specific subroom (v2)",
+    "documentation": false
+  },
+  {
+    "service": "match",
+    "method": "POST",
+    "path": "/matchmake/v2/room/:roomId",
+    "url": "/match/matchmake/v2/room/:roomId",
+    "summary": "Matchmake into a room (v2, default subroom)",
+    "documentation": false
+  },
+  {
+    "service": "match",
+    "method": "POST",
+    "path": "/matchmake/none",
+    "url": "/match/matchmake/none",
+    "summary": "Matchmake with no target",
+    "documentation": false
+  },
+  {
+    "service": "match",
+    "method": "POST",
+    "path": "/matchmake/dorm",
+    "url": "/match/matchmake/dorm",
+    "summary": "Matchmake into the player’s dorm",
+    "documentation": false
+  },
+  {
+    "service": "match",
+    "method": "GET",
+    "path": "/player/connection-info",
+    "url": "/match/player/connection-info",
+    "summary": "Photon connection info",
+    "documentation": false
+  },
+  {
+    "service": "match",
+    "method": "GET",
+    "path": "/player/qos",
+    "url": "/match/player/qos",
+    "summary": "QoS probe targets",
+    "documentation": false
+  },
+  {
+    "service": "match",
+    "method": "PUT",
+    "path": "/player/photonregionpings",
+    "url": "/match/player/photonregionpings",
+    "summary": "Photon region pings (no-op ack)",
+    "documentation": false
+  },
+  {
+    "service": "match",
+    "method": "PUT",
+    "path": "/player/gameserverregionpings",
+    "url": "/match/player/gameserverregionpings",
+    "summary": "Game-server region pings (no-op ack)",
+    "documentation": false
+  },
+  {
+    "service": "match",
+    "method": "POST",
+    "path": "/invite",
+    "url": "/match/invite",
+    "summary": "Invite a player into the caller’s room instance",
+    "documentation": false
+  },
+  {
+    "service": "match",
+    "method": "POST",
+    "path": "/roominstance/:id/reportjoinresult",
+    "url": "/match/roominstance/:id/reportjoinresult",
+    "summary": "Report join result (no-op ack)",
+    "documentation": false
+  },
+  {
+    "service": "match",
+    "method": "PUT",
+    "path": "/roominstance/:id/inprogress",
+    "url": "/match/roominstance/:id/inprogress",
+    "summary": "Set instance in-progress flag",
+    "documentation": false
+  },
+  {
+    "service": "match",
+    "method": "POST",
+    "path": "/roominstance/:id/markprivate",
+    "url": "/match/roominstance/:id/markprivate",
+    "summary": "Mark an instance private (owner only)",
+    "documentation": false
+  },
+  {
+    "service": "match",
+    "method": "GET",
+    "path": "/room/:roomId{[0-9]+}/instances",
+    "url": "/match/room/:roomId{[0-9]+}/instances",
+    "summary": "A room’s live instances",
+    "documentation": false
+  },
+  {
+    "service": "match",
+    "method": "GET",
+    "path": "/rooms/requiring/developer",
+    "url": "/match/rooms/requiring/developer",
+    "summary": "Rooms requiring a developer",
+    "documentation": false
+  },
+  {
+    "service": "match",
+    "method": "GET",
+    "path": "/rooms/requiring/rrplus",
+    "url": "/match/rooms/requiring/rrplus",
+    "summary": "Rooms requiring RR+",
+    "documentation": false
+  },
+  {
+    "service": "match",
+    "method": "GET",
+    "path": "/openapi.json",
+    "url": "/match/openapi.json",
+    "summary": "",
+    "documentation": true
+  },
+  {
+    "service": "moderation",
+    "method": "GET",
+    "path": "/",
+    "url": "/moderation/",
+    "summary": "",
+    "documentation": false
+  },
+  {
+    "service": "moderation",
+    "method": "GET",
+    "path": "/voice/config",
+    "url": "/moderation/voice/config",
+    "summary": "",
+    "documentation": false
+  },
+  {
+    "service": "notify",
+    "method": "POST",
+    "path": "/hub/v1/negotiate",
+    "url": "/notify/hub/v1/negotiate",
+    "summary": "",
+    "documentation": false
+  },
+  {
+    "service": "notify",
+    "method": "GET",
+    "path": "/hub/v1",
+    "url": "/notify/hub/v1",
+    "summary": "",
+    "documentation": false
+  },
+  {
+    "service": "notify",
+    "method": "POST",
+    "path": "/internal/notify",
+    "url": "/notify/internal/notify",
+    "summary": "",
+    "documentation": false
+  },
+  {
+    "service": "notify",
+    "method": "POST",
+    "path": "/internal/broadcast",
+    "url": "/notify/internal/broadcast",
+    "summary": "",
+    "documentation": false
+  },
+  {
+    "service": "notify",
+    "method": "POST",
+    "path": "/internal/coach-message-all",
+    "url": "/notify/internal/coach-message-all",
+    "summary": "",
+    "documentation": false
+  },
+  {
+    "service": "notify",
+    "method": "POST",
+    "path": "/internal/coach-message",
+    "url": "/notify/internal/coach-message",
+    "summary": "",
+    "documentation": false
+  },
+  {
+    "service": "notify",
+    "method": "GET",
+    "path": "/internal/hub-state",
+    "url": "/notify/internal/hub-state",
+    "summary": "",
+    "documentation": false
+  },
+  {
+    "service": "notify",
+    "method": "DELETE",
+    "path": "/internal/hub-state/pending",
+    "url": "/notify/internal/hub-state/pending",
+    "summary": "",
+    "documentation": false
+  },
+  {
+    "service": "ns",
+    "method": "GET",
+    "path": "/",
+    "url": "/ns/",
+    "summary": "",
+    "documentation": false
+  },
+  {
+    "service": "platformnotifications",
+    "method": "GET",
+    "path": "/",
+    "url": "/platformnotifications/",
+    "summary": "",
+    "documentation": false
+  },
+  {
+    "service": "platformnotifications",
+    "method": "GET",
+    "path": "/accounts/:id{[0-9]+}/receives/GameplayInvites",
+    "url": "/platformnotifications/accounts/:id{[0-9]+}/receives/GameplayInvites",
+    "summary": "",
+    "documentation": false
+  },
+  {
+    "service": "platformnotifications",
+    "method": "GET",
+    "path": "/config/categories",
+    "url": "/platformnotifications/config/categories",
+    "summary": "",
+    "documentation": false
+  },
+  {
+    "service": "platformnotifications",
+    "method": "GET",
+    "path": "/crm/me/config/v3",
+    "url": "/platformnotifications/crm/me/config/v3",
+    "summary": "",
+    "documentation": false
+  },
+  {
+    "service": "platformnotifications",
+    "method": "GET",
+    "path": "/preferences",
+    "url": "/platformnotifications/preferences",
+    "summary": "",
+    "documentation": false
+  },
+  {
+    "service": "playersettings",
+    "method": "GET",
+    "path": "/",
+    "url": "/playersettings/",
+    "summary": "Health check",
+    "documentation": false
+  },
+  {
+    "service": "playersettings",
+    "method": "GET",
+    "path": "/playersettings",
+    "url": "/playersettings/playersettings",
+    "summary": "The player’s settings",
+    "documentation": false
+  },
+  {
+    "service": "playersettings",
+    "method": "PUT",
+    "path": "/playersettings",
+    "url": "/playersettings/playersettings",
+    "summary": "Write the player’s settings",
+    "documentation": false
+  },
+  {
+    "service": "playersettings",
+    "method": "DELETE",
+    "path": "/playersettings",
+    "url": "/playersettings/playersettings",
+    "summary": "Delete a player setting",
+    "documentation": false
+  },
+  {
+    "service": "playersettings",
+    "method": "GET",
+    "path": "/openapi.json",
+    "url": "/playersettings/openapi.json",
+    "summary": "",
+    "documentation": true
+  },
+  {
+    "service": "roomcomments",
+    "method": "GET",
+    "path": "/",
+    "url": "/roomcomments/",
+    "summary": "Health check",
+    "documentation": false
+  },
+  {
+    "service": "roomcomments",
+    "method": "GET",
+    "path": "/comments/get/:roomId",
+    "url": "/roomcomments/comments/get/:roomId",
+    "summary": "A room’s comments",
+    "documentation": false
+  },
+  {
+    "service": "roomcomments",
+    "method": "POST",
+    "path": "/comments/create/:roomId",
+    "url": "/roomcomments/comments/create/:roomId",
+    "summary": "Leave a comment in a room",
+    "documentation": false
+  },
+  {
+    "service": "roomcomments",
+    "method": "GET",
+    "path": "/openapi.json",
+    "url": "/roomcomments/openapi.json",
+    "summary": "",
+    "documentation": true
+  },
+  {
+    "service": "rooms",
+    "method": "GET",
+    "path": "/",
+    "url": "/rooms/",
+    "summary": "Service liveness",
+    "documentation": false
+  },
+  {
+    "service": "rooms",
+    "method": "GET",
+    "path": "/rooms",
+    "url": "/rooms/rooms",
+    "summary": "Look up a room by id or name",
+    "documentation": false
+  },
+  {
+    "service": "rooms",
+    "method": "GET",
+    "path": "/rooms/search",
+    "url": "/rooms/rooms/search",
+    "summary": "Search rooms",
+    "documentation": false
+  },
+  {
+    "service": "rooms",
+    "method": "GET",
+    "path": "/rooms/autocomplete_search",
+    "url": "/rooms/rooms/autocomplete_search",
+    "summary": "Search suggestions for the search box",
+    "documentation": false
+  },
+  {
+    "service": "rooms",
+    "method": "GET",
+    "path": "/rooms/hot",
+    "url": "/rooms/rooms/hot",
+    "summary": "The “hot” rooms feed",
+    "documentation": false
+  },
+  {
+    "service": "rooms",
+    "method": "GET",
+    "path": "/rooms/curated_playlists",
+    "url": "/rooms/rooms/curated_playlists",
+    "summary": "Curated room playlists",
+    "documentation": false
+  },
+  {
+    "service": "rooms",
+    "method": "GET",
+    "path": "/rooms/carousel/rising",
+    "url": "/rooms/rooms/carousel/rising",
+    "summary": "The “rising” rooms carousel",
+    "documentation": false
+  },
+  {
+    "service": "rooms",
+    "method": "GET",
+    "path": "/rooms/base",
+    "url": "/rooms/rooms/base",
+    "summary": "Base (template) rooms",
+    "documentation": false
+  },
+  {
+    "service": "rooms",
+    "method": "GET",
+    "path": "/rooms/recommendations",
+    "url": "/rooms/rooms/recommendations",
+    "summary": "Recommended rooms",
+    "documentation": false
+  },
+  {
+    "service": "rooms",
+    "method": "GET",
+    "path": "/featuredrooms/current",
+    "url": "/rooms/featuredrooms/current",
+    "summary": "Featured rooms",
+    "documentation": false
+  },
+  {
+    "service": "rooms",
+    "method": "GET",
+    "path": "/rooms/bulk",
+    "url": "/rooms/rooms/bulk",
+    "summary": "Look up several rooms at once",
+    "documentation": false
+  },
+  {
+    "service": "rooms",
+    "method": "POST",
+    "path": "/rooms/bulk",
+    "url": "/rooms/rooms/bulk",
+    "summary": "Look up several rooms at once (bulk POST)",
+    "documentation": false
+  },
+  {
+    "service": "rooms",
+    "method": "GET",
+    "path": "/roomserver/rooms/createdby/me",
+    "url": "/rooms/roomserver/rooms/createdby/me",
+    "summary": "Rooms the caller created (legacy path)",
+    "documentation": false
+  },
+  {
+    "service": "rooms",
+    "method": "GET",
+    "path": "/rooms/ownedby/me",
+    "url": "/rooms/rooms/ownedby/me",
+    "summary": "Rooms the caller owns (excluding their dorm)",
+    "documentation": false
+  },
+  {
+    "service": "rooms",
+    "method": "GET",
+    "path": "/rooms/createdby/me",
+    "url": "/rooms/rooms/createdby/me",
+    "summary": "Rooms the caller created",
+    "documentation": false
+  },
+  {
+    "service": "rooms",
+    "method": "GET",
+    "path": "/rooms/contributedby/me",
+    "url": "/rooms/rooms/contributedby/me",
+    "summary": "Rooms the caller owns or contributes to",
+    "documentation": false
+  },
+  {
+    "service": "rooms",
+    "method": "GET",
+    "path": "/dormroom/me",
+    "url": "/rooms/dormroom/me",
+    "summary": "The caller’s dorm id",
+    "documentation": false
+  },
+  {
+    "service": "rooms",
+    "method": "GET",
+    "path": "/rooms/ownedby/:accountId{[0-9]+}",
+    "url": "/rooms/rooms/ownedby/:accountId{[0-9]+}",
+    "summary": "Another player’s public rooms",
+    "documentation": false
+  },
+  {
+    "service": "rooms",
+    "method": "GET",
+    "path": "/showcase/:playerId{[0-9]+}",
+    "url": "/rooms/showcase/:playerId{[0-9]+}",
+    "summary": "A player’s showcased rooms",
+    "documentation": false
+  },
+  {
+    "service": "rooms",
+    "method": "GET",
+    "path": "/rooms/favoritedby/me",
+    "url": "/rooms/rooms/favoritedby/me",
+    "summary": "Rooms the caller favorited",
+    "documentation": false
+  },
+  {
+    "service": "rooms",
+    "method": "GET",
+    "path": "/rooms/visitedby/me",
+    "url": "/rooms/rooms/visitedby/me",
+    "summary": "Rooms the caller visited",
+    "documentation": false
+  },
+  {
+    "service": "rooms",
+    "method": "GET",
+    "path": "/rooms/visitedby/:playerId{[0-9]+}",
+    "url": "/rooms/rooms/visitedby/:playerId{[0-9]+}",
+    "summary": "A friend’s visited rooms",
+    "documentation": false
+  },
+  {
+    "service": "rooms",
+    "method": "GET",
+    "path": "/rooms/:roomId{[0-9]+}/interactionby/me",
+    "url": "/rooms/rooms/:roomId{[0-9]+}/interactionby/me",
+    "summary": "The caller’s state on a room",
+    "documentation": false
+  },
+  {
+    "service": "rooms",
+    "method": "PUT",
+    "path": "/rooms/:roomId{[0-9]+}/interactionby/me/cheer",
+    "url": "/rooms/rooms/:roomId{[0-9]+}/interactionby/me/cheer",
+    "summary": "Toggle the caller’s cheer on a room",
+    "documentation": false
+  },
+  {
+    "service": "rooms",
+    "method": "DELETE",
+    "path": "/rooms/:roomId{[0-9]+}/interactionby/me/cheer",
+    "url": "/rooms/rooms/:roomId{[0-9]+}/interactionby/me/cheer",
+    "summary": "Un-cheer a room",
+    "documentation": false
+  },
+  {
+    "service": "rooms",
+    "method": "PUT",
+    "path": "/rooms/:roomId{[0-9]+}/interactionby/me/favorite",
+    "url": "/rooms/rooms/:roomId{[0-9]+}/interactionby/me/favorite",
+    "summary": "Toggle the caller’s favorite on a room",
+    "documentation": false
+  },
+  {
+    "service": "rooms",
+    "method": "DELETE",
+    "path": "/rooms/:roomId{[0-9]+}/interactionby/me/favorite",
+    "url": "/rooms/rooms/:roomId{[0-9]+}/interactionby/me/favorite",
+    "summary": "Un-favorite a room",
+    "documentation": false
+  },
+  {
+    "service": "rooms",
+    "method": "POST",
+    "path": "/rooms/:roomId{[0-9]+}/clone",
+    "url": "/rooms/rooms/:roomId{[0-9]+}/clone",
+    "summary": "Clone a room",
+    "documentation": false
+  },
+  {
+    "service": "rooms",
+    "method": "PUT",
+    "path": "/rooms/:roomId{[0-9]+}/description",
+    "url": "/rooms/rooms/:roomId{[0-9]+}/description",
+    "summary": "Set a room’s description",
+    "documentation": false
+  },
+  {
+    "service": "rooms",
+    "method": "PUT",
+    "path": "/rooms/:roomId{[0-9]+}/name",
+    "url": "/rooms/rooms/:roomId{[0-9]+}/name",
+    "summary": "Rename a room",
+    "documentation": false
+  },
+  {
+    "service": "rooms",
+    "method": "PUT",
+    "path": "/rooms/:roomId{[0-9]+}/tags",
+    "url": "/rooms/rooms/:roomId{[0-9]+}/tags",
+    "summary": "Toggle a tag on a room",
+    "documentation": false
+  },
+  {
+    "service": "rooms",
+    "method": "PUT",
+    "path": "/rooms/:roomId{[0-9]+}/image",
+    "url": "/rooms/rooms/:roomId{[0-9]+}/image",
+    "summary": "Set a room’s image",
+    "documentation": false
+  },
+  {
+    "service": "rooms",
+    "method": "DELETE",
+    "path": "/rooms/:roomId{[0-9]+}",
+    "url": "/rooms/rooms/:roomId{[0-9]+}",
+    "summary": "Delete a room",
+    "documentation": false
+  },
+  {
+    "service": "rooms",
+    "method": "GET",
+    "path": "/rooms/:roomId{[0-9]+}/roles",
+    "url": "/rooms/rooms/:roomId{[0-9]+}/roles",
+    "summary": "A room’s roles",
+    "documentation": false
+  },
+  {
+    "service": "rooms",
+    "method": "PUT",
+    "path": "/rooms/:roomId{[0-9]+}/roles/:accountId{[0-9]+}",
+    "url": "/rooms/rooms/:roomId{[0-9]+}/roles/:accountId{[0-9]+}",
+    "summary": "Set a player’s role in a room",
+    "documentation": false
+  },
+  {
+    "service": "rooms",
+    "method": "PUT",
+    "path": "/rooms/:roomId{[0-9]+}/roles/:accountId{[0-9]+}/invite",
+    "url": "/rooms/rooms/:roomId{[0-9]+}/roles/:accountId{[0-9]+}/invite",
+    "summary": "Invite a player to a room role",
+    "documentation": false
+  },
+  {
+    "service": "rooms",
+    "method": "GET",
+    "path": "/rooms/:roomId{[0-9]+}/bans",
+    "url": "/rooms/rooms/:roomId{[0-9]+}/bans",
+    "summary": "A room’s ban list",
+    "documentation": false
+  },
+  {
+    "service": "rooms",
+    "method": "POST",
+    "path": "/rooms/:roomId{[0-9]+}/bans",
+    "url": "/rooms/rooms/:roomId{[0-9]+}/bans",
+    "summary": "Ban a player from a room",
+    "documentation": false
+  },
+  {
+    "service": "rooms",
+    "method": "GET",
+    "path": "/Room_server/rooms/:roomId{[0-9]+}/bans/:playerId{[0-9]+}/isBanned",
+    "url": "/rooms/Room_server/rooms/:roomId{[0-9]+}/bans/:playerId{[0-9]+}/isBanned",
+    "summary": "Whether a player is banned from a room",
+    "documentation": false
+  },
+  {
+    "service": "rooms",
+    "method": "GET",
+    "path": "/rooms/:roomId{[0-9]+}/bans/:playerId{[0-9]+}/isBanned",
+    "url": "/rooms/rooms/:roomId{[0-9]+}/bans/:playerId{[0-9]+}/isBanned",
+    "summary": "Whether a player is banned from a room (unprefixed path)",
+    "documentation": false
+  },
+  {
+    "service": "rooms",
+    "method": "DELETE",
+    "path": "/rooms/:roomId{[0-9]+}/bans/:playerId{[0-9]+}",
+    "url": "/rooms/rooms/:roomId{[0-9]+}/bans/:playerId{[0-9]+}",
+    "summary": "Unban a player from a room",
+    "documentation": false
+  },
+  {
+    "service": "rooms",
+    "method": "POST",
+    "path": "/rooms/:roomId{[0-9]+}/leaderboards/:leaderboardId{[0-9]+}",
+    "url": "/rooms/rooms/:roomId{[0-9]+}/leaderboards/:leaderboardId{[0-9]+}",
+    "summary": "Configure a room leaderboard",
+    "documentation": false
+  },
+  {
+    "service": "rooms",
+    "method": "DELETE",
+    "path": "/rooms/:roomId{[0-9]+}/leaderboards/:leaderboardId{[0-9]+}",
+    "url": "/rooms/rooms/:roomId{[0-9]+}/leaderboards/:leaderboardId{[0-9]+}",
+    "summary": "Remove a room leaderboard",
+    "documentation": false
+  },
+  {
+    "service": "rooms",
+    "method": "PUT",
+    "path": "/rooms/:roomId{[0-9]+}/warning",
+    "url": "/rooms/rooms/:roomId{[0-9]+}/warning",
+    "summary": "Set a room’s content warning",
+    "documentation": false
+  },
+  {
+    "service": "rooms",
+    "method": "PUT",
+    "path": "/rooms/:roomId{[0-9]+}/cloning",
+    "url": "/rooms/rooms/:roomId{[0-9]+}/cloning",
+    "summary": "Allow or block cloning of a room",
+    "documentation": false
+  },
+  {
+    "service": "rooms",
+    "method": "PUT",
+    "path": "/rooms/:roomId{[0-9]+}/restrictions",
+    "url": "/rooms/rooms/:roomId{[0-9]+}/restrictions",
+    "summary": "Set a room’s platform/movement support flags",
+    "documentation": false
+  },
+  {
+    "service": "rooms",
+    "method": "PUT",
+    "path": "/rooms/:roomId{[0-9]+}/loadscreen",
+    "url": "/rooms/rooms/:roomId{[0-9]+}/loadscreen",
+    "summary": "Set a room’s load screen",
+    "documentation": false
+  },
+  {
+    "service": "rooms",
+    "method": "PUT",
+    "path": "/rooms/:roomId{[0-9]+}/accessibility",
+    "url": "/rooms/rooms/:roomId{[0-9]+}/accessibility",
+    "summary": "Set a room’s accessibility",
+    "documentation": false
+  },
+  {
+    "service": "rooms",
+    "method": "GET",
+    "path": "/rooms/:roomId{[0-9]+}/subrooms/:subRoomId{[0-9]+}/saves",
+    "url": "/rooms/rooms/:roomId{[0-9]+}/subrooms/:subRoomId{[0-9]+}/saves",
+    "summary": "A subroom’s saved-data versions",
+    "documentation": false
+  },
+  {
+    "service": "rooms",
+    "method": "GET",
+    "path": "/rooms/:roomId{[0-9]+}/subrooms/:subRoomId{[0-9]+}/saves/no_unity_assets",
+    "url": "/rooms/rooms/:roomId{[0-9]+}/subrooms/:subRoomId{[0-9]+}/saves/no_unity_assets",
+    "summary": "A subroom’s saves, without their Unity-asset payloads",
+    "documentation": false
+  },
+  {
+    "service": "rooms",
+    "method": "GET",
+    "path": "/rooms/:roomId{[0-9]+}/subrooms/:subRoomId{[0-9]+}/saves/:saveId{[0-9]+}",
+    "url": "/rooms/rooms/:roomId{[0-9]+}/subrooms/:subRoomId{[0-9]+}/saves/:saveId{[0-9]+}",
+    "summary": "One of a subroom’s saves by id",
+    "documentation": false
+  },
+  {
+    "service": "rooms",
+    "method": "POST",
+    "path": "/rooms/:roomId{[0-9]+}/subrooms/:subRoomId{[0-9]+}/data",
+    "url": "/rooms/rooms/:roomId{[0-9]+}/subrooms/:subRoomId{[0-9]+}/data",
+    "summary": "Save a subroom’s data (room save)",
+    "documentation": false
+  },
+  {
+    "service": "rooms",
+    "method": "PUT",
+    "path": "/rooms/:roomId{[0-9]+}/subrooms/:subRoomId{[0-9]+}/modify",
+    "url": "/rooms/rooms/:roomId{[0-9]+}/subrooms/:subRoomId{[0-9]+}/modify",
+    "summary": "Modify a subroom’s settings",
+    "documentation": false
+  },
+  {
+    "service": "rooms",
+    "method": "POST",
+    "path": "/rooms/:roomId{[0-9]+}/subrooms/:subRoomId{[0-9]+}/publish_save",
+    "url": "/rooms/rooms/:roomId{[0-9]+}/subrooms/:subRoomId{[0-9]+}/publish_save",
+    "summary": "Publish one of a subroom’s saves",
+    "documentation": false
+  },
+  {
+    "service": "rooms",
+    "method": "PUT",
+    "path": "/rooms/:roomId{[0-9]+}/subrooms/:subRoomId{[0-9]+}/accessibility",
+    "url": "/rooms/rooms/:roomId{[0-9]+}/subrooms/:subRoomId{[0-9]+}/accessibility",
+    "summary": "Set a subroom’s accessibility",
+    "documentation": false
+  },
+  {
+    "service": "rooms",
+    "method": "PUT",
+    "path": "/rooms/:roomId{[0-9]+}/subrooms/:subRoomId{[0-9]+}/permissions",
+    "url": "/rooms/rooms/:roomId{[0-9]+}/subrooms/:subRoomId{[0-9]+}/permissions",
+    "summary": "Set a subroom’s permissions",
+    "documentation": false
+  },
+  {
+    "service": "rooms",
+    "method": "POST",
+    "path": "/rooms/:roomId{[0-9]+}/subrooms/:subRoomId{[0-9]+}/clone",
+    "url": "/rooms/rooms/:roomId{[0-9]+}/subrooms/:subRoomId{[0-9]+}/clone",
+    "summary": "Clone a subroom",
+    "documentation": false
+  },
+  {
+    "service": "rooms",
+    "method": "POST",
+    "path": "/rooms/:roomId{[0-9]+}/subrooms",
+    "url": "/rooms/rooms/:roomId{[0-9]+}/subrooms",
+    "summary": "Create a subroom",
+    "documentation": false
+  },
+  {
+    "service": "rooms",
+    "method": "DELETE",
+    "path": "/rooms/:roomId{[0-9]+}/subrooms/:subRoomId{[0-9]+}",
+    "url": "/rooms/rooms/:roomId{[0-9]+}/subrooms/:subRoomId{[0-9]+}",
+    "summary": "Delete a subroom",
+    "documentation": false
+  },
+  {
+    "service": "rooms",
+    "method": "GET",
+    "path": "/rooms/:roomId{[0-9]+}/similar",
+    "url": "/rooms/rooms/:roomId{[0-9]+}/similar",
+    "summary": "Rooms similar to a room",
+    "documentation": false
+  },
+  {
+    "service": "rooms",
+    "method": "GET",
+    "path": "/rooms/:roomId{[0-9]+}/playerdata/me",
+    "url": "/rooms/rooms/:roomId{[0-9]+}/playerdata/me",
+    "summary": "The caller’s per-room player data",
+    "documentation": false
+  },
+  {
+    "service": "rooms",
+    "method": "GET",
+    "path": "/rooms/:roomId{[0-9]+}/experience",
+    "url": "/rooms/rooms/:roomId{[0-9]+}/experience",
+    "summary": "A room’s XP settings",
+    "documentation": false
+  },
+  {
+    "service": "rooms",
+    "method": "GET",
+    "path": "/rooms/:roomId{[0-9]+}/experience/player",
+    "url": "/rooms/rooms/:roomId{[0-9]+}/experience/player",
+    "summary": "The caller’s per-room experience",
+    "documentation": false
+  },
+  {
+    "service": "rooms",
+    "method": "GET",
+    "path": "/rooms/:roomId{[0-9]+}",
+    "url": "/rooms/rooms/:roomId{[0-9]+}",
+    "summary": "A room by id",
+    "documentation": false
+  },
+  {
+    "service": "rooms",
+    "method": "GET",
+    "path": "/publishState/configs",
+    "url": "/rooms/publishState/configs",
+    "summary": "Room republish limits",
+    "documentation": false
+  },
+  {
+    "service": "rooms",
+    "method": "GET",
+    "path": "/photon_access_token",
+    "url": "/rooms/photon_access_token",
+    "summary": "Photon token + room permissions",
+    "documentation": false
+  },
+  {
+    "service": "rooms",
+    "method": "GET",
+    "path": "/openapi.json",
+    "url": "/rooms/openapi.json",
+    "summary": "",
+    "documentation": true
+  },
+  {
+    "service": "storage",
+    "method": "GET",
+    "path": "/",
+    "url": "/storage/",
+    "summary": "Health check",
+    "documentation": false
+  },
+  {
+    "service": "storage",
+    "method": "POST",
+    "path": "/upload",
+    "url": "/storage/upload",
+    "summary": "Upload a file",
+    "documentation": false
+  },
+  {
+    "service": "storage",
+    "method": "GET",
+    "path": "/openapi.json",
+    "url": "/storage/openapi.json",
+    "summary": "",
+    "documentation": true
+  },
+  {
+    "service": "www",
+    "method": "GET",
+    "path": "/api/config",
+    "url": "/www/api/config",
+    "summary": "",
+    "documentation": false
+  },
+  {
+    "service": "www",
+    "method": "GET",
+    "path": "/server-status",
+    "url": "/www/server-status",
+    "summary": "",
+    "documentation": false
+  },
+  {
+    "service": "www",
+    "method": "POST",
+    "path": "/api/signup",
+    "url": "/www/api/signup",
+    "summary": "",
+    "documentation": false
+  },
+  {
+    "service": "www",
+    "method": "GET",
+    "path": "/api/benefits/status",
+    "url": "/www/api/benefits/status",
+    "summary": "",
+    "documentation": false
+  },
+  {
+    "service": "www",
+    "method": "POST",
+    "path": "/api/benefits/claim",
+    "url": "/www/api/benefits/claim",
+    "summary": "",
+    "documentation": false
+  },
+  {
+    "service": "www",
+    "method": "GET",
+    "path": "/privacy",
+    "url": "/www/privacy",
+    "summary": "",
+    "documentation": false
+  },
+  {
+    "service": "www",
+    "method": "GET",
+    "path": "/docs",
+    "url": "/www/docs",
+    "summary": "",
+    "documentation": false
+  },
+  {
+    "service": "www",
+    "method": "GET",
+    "path": "/docs/openapi/:service",
+    "url": "/www/docs/openapi/:service",
+    "summary": "",
+    "documentation": false
+  },
+  {
+    "service": "www",
+    "method": "ALL",
+    "path": "*",
+    "url": "/www*",
+    "summary": "",
+    "documentation": false
+  }
+]

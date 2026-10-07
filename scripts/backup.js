@@ -1,0 +1,3 @@
+import {DatabaseSync,backup} from 'node:sqlite';import {mkdirSync} from 'node:fs';import path from 'node:path';
+const data=path.resolve(process.env.DATA_DIR||'data');const root=path.resolve(process.env.BACKUP_DIR||path.join(data,'backups'),new Date().toISOString().replaceAll(':','-'));mkdirSync(root,{recursive:true});
+for(const file of ['recflare.sqlite','notifications.sqlite']){const db=new DatabaseSync(path.join(data,file));await backup(db,path.join(root,file));db.close();}console.log('Database backup:',root);console.log('Also copy the cdn/ and images/ directories and keep backups outside this disk. For a consistent joint snapshot, stop writes first.');

@@ -1,0 +1,10 @@
+export default [
+	{
+		"AdCarouselItemId": 1,
+		"Description": "No description.",
+		"ImageName": "AdCarouselItem.png",
+		"PurchasableItemIds": [],
+		"Title": "Lorem ipsum"
+	}
+]
+;

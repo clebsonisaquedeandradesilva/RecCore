@@ -1,0 +1,28 @@
+{
+  "originArchive": "server-0.0.8.zip",
+  "originSHA256": "8ccc6b8ae970aa9a284607d23fae9a5649f74dd474b6a9359c1496400ad602ee",
+  "runtime": "Node.js 24.8.0",
+  "http": "native node:http with custom NativeRouter",
+  "runtimeNpmDependencies": 0,
+  "thirdPartyCode": "Bundled JS validation and email/profanity helpers, image WASM, static React/Scalar frontend; not exclusively standard-library code",
+  "services": 26,
+  "registeredServiceMethodPathCombinations": 516,
+  "documentationEndpoints": 18,
+  "extraHealthEndpoint": "/healthz",
+  "automatedTests": {
+    "total": 17,
+    "passed": 17,
+    "failed": 0
+  },
+  "smokeTest": {
+    "entries": 516,
+    "authenticated": false,
+    "payloads": "minimal",
+    "externalIntegrations": "disabled",
+    "exceptions": 0,
+    "http5xx": 0
+  },
+  "dockerBuildExecuted": false,
+  "renderDeploymentExecuted": false,
+  "gameClientEndToEndValidated": false
+}

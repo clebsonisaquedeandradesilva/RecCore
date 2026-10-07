@@ -1,0 +1,6 @@
+import {createHmac,timingSafeEqual} from 'node:crypto';
+const enc=v=>Buffer.from(JSON.stringify(v)).toString('base64url');
+export async function sign(payload,secret,algorithm='HS256'){if(algorithm!=='HS256')throw Error('Unsupported JWT algorithm');const body=enc({alg:'HS256',typ:'JWT'})+'.'+enc(payload);return body+'.'+createHmac('sha256',secret).update(body).digest('base64url');}
+export async function verify(token,secret,algorithm='HS256'){
+ if(algorithm!=='HS256'||typeof token!=='string'||token.length>16384)throw Error('Invalid JWT');const parts=token.split('.');if(parts.length!==3)throw Error('Invalid JWT');const [h,b,s]=parts;const header=JSON.parse(Buffer.from(h,'base64url'));if(header.alg!=='HS256')throw Error('Invalid JWT algorithm');const expected=createHmac('sha256',secret).update(h+'.'+b).digest();const actual=Buffer.from(s,'base64url');if(expected.length!==actual.length||!timingSafeEqual(expected,actual))throw Error('Invalid signature');const p=JSON.parse(Buffer.from(b,'base64url'));const now=Date.now()/1000;if(p.exp!==undefined&&(typeof p.exp!=='number'||p.exp<=now))throw Error('Expired JWT');if(p.nbf!==undefined&&(typeof p.nbf!=='number'||p.nbf>now))throw Error('Inactive JWT');return p;
+}

@@ -1,0 +1,72 @@
+[
+  {
+    "name": "zod",
+    "version": "4.6.5",
+    "license": "MIT",
+    "licenseFiles": [
+      "zod-LICENSE"
+    ]
+  },
+  {
+    "name": "@2toad/profanity",
+    "version": "3.3.0",
+    "license": "MIT",
+    "licenseFiles": [
+      "@2toad_profanity-LICENSE"
+    ]
+  },
+  {
+    "name": "isemail",
+    "version": "3.2.0",
+    "license": "BSD-3-Clause",
+    "licenseFiles": [
+      "isemail-LICENSE"
+    ]
+  },
+  {
+    "name": "react",
+    "version": "19.3.0",
+    "license": "MIT",
+    "licenseFiles": [
+      "react-LICENSE"
+    ]
+  },
+  {
+    "name": "react-dom",
+    "version": "19.3.0",
+    "license": "MIT",
+    "licenseFiles": [
+      "react-dom-LICENSE"
+    ]
+  },
+  {
+    "name": "scheduler",
+    "version": "0.28.0",
+    "license": "MIT",
+    "licenseFiles": [
+      "scheduler-LICENSE"
+    ]
+  },
+  {
+    "name": "@scalar/api-reference",
+    "version": "1.46.4",
+    "license": "MIT",
+    "licenseFiles": []
+  },
+  {
+    "name": "@cf-wasm/photon",
+    "version": "0.4.0",
+    "license": "Apache-2.0",
+    "licenseFiles": [
+      "@cf-wasm_photon-LICENSE.md"
+    ]
+  },
+  {
+    "name": "@cf-wasm/internals",
+    "version": "0.2.0",
+    "license": "MIT",
+    "licenseFiles": [
+      "@cf-wasm_internals-LICENSE.md"
+    ]
+  }
+]

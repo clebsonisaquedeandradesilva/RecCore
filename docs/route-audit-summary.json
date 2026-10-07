@@ -1,0 +1,33 @@
+{
+  "registered": 516,
+  "unique": 516,
+  "documentation": 18,
+  "services": {
+    "accounts": 21,
+    "ai": 9,
+    "api": 165,
+    "auth": 11,
+    "cards": 1,
+    "cdn": 8,
+    "chat": 28,
+    "clubs": 36,
+    "commerce": 9,
+    "datacollection": 4,
+    "discovery": 4,
+    "econ": 64,
+    "img": 3,
+    "leaderboard": 6,
+    "link": 1,
+    "lists": 7,
+    "match": 35,
+    "moderation": 2,
+    "notify": 8,
+    "ns": 1,
+    "platformnotifications": 5,
+    "playersettings": 5,
+    "roomcomments": 4,
+    "rooms": 67,
+    "storage": 3,
+    "www": 9
+  }
+}

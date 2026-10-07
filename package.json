@@ -1,0 +1,7 @@
+{
+ "name":"recflare-native-node", "version":"0.0.8-port.1", "private":true,"type":"module",
+ "description":"RecFlare port: native Node HTTP, persistent SQLite, Render Docker deployment",
+ "engines":{"node":">=24.8.0 <25"},
+ "scripts":{"start":"node src/server.js","test":"node --test tests/*.test.js","audit:routes":"node scripts/audit-routes.js","backup":"node scripts/backup.js"},
+ "dependencies":{}
+}

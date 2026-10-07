@@ -1,0 +1,40 @@
+(node:3901) ExperimentalWarning: SQLite is an experimental feature and might change at any time
+(Use `node --trace-warnings ...` to show where the warning was created)
+(node:3901) [DEP0040] DeprecationWarning: The `punycode` module is deprecated. Please use a userland alternative instead.
+✔ health, discovery and 26 mounted services (6.649012ms)
+hub: notification queued, nobody to deliver to {
+  playerId: 2,
+  notificationType: 'SelfAccountUpdate',
+  connectionIds: [],
+  liveSockets: 0
+}
+hub: notification queued, nobody to deliver to {
+  playerId: 2,
+  notificationType: 'AccountUpdate',
+  connectionIds: [],
+  liveSockets: 0
+}
+✔ signup issues JWT and persists account (33.371677ms)
+✔ profile mutation validates and persists (8.243799ms)
+✔ bad signature, expired JWT and absent auth rejected (0.976015ms)
+✔ refresh rotation rejects replay (4.049892ms)
+✔ KV, objects and accounts survive application restart (835.82509ms)
+✔ OpenAPI and unknown path (3.709638ms)
+✔ website static assets, SPA fallback and configured service URLs (74.404074ms)
+✔ authenticated multipart upload, CDN read, range and conditional ETag (11.410641ms)
+✔ authenticated player settings merge and read (2.083717ms)
+✔ router preserves constrained parameter names and rejects invalid ids (26.242707ms)
+✔ greedy key includes nested paths (0.86058ms)
+✔ repeated form data and array query (2.510754ms)
+✔ object bytes, metadata, ranges, etag, hashed keys and delete (12.998926ms)
+✔ assets accept URL objects and return 404 for missing files (78.493322ms)
+✔ native middleware order, CORS and status overrides (1.280445ms)
+✔ native HTTP and SignalR websocket handshake (8546.073077ms)
+ℹ tests 17
+ℹ suites 0
+ℹ pass 17
+ℹ fail 0
+ℹ cancelled 0
+ℹ skipped 0
+ℹ todo 0
+ℹ duration_ms 19173.265157

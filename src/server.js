@@ -1,0 +1,15 @@
+import http from 'node:http';import {Readable} from 'node:stream';import {pipeline} from 'node:stream/promises';import {createApplication} from './application.js';import {upgradeSocket} from './runtime/websocket.js';
+const port=Number(process.env.PORT||10000);const maxBody=Number(process.env.MAX_BODY_BYTES||16777216);const app=createApplication();
+function headersFor(req){const headers=new Headers();for(const[k,v]of Object.entries(req.headers))if(v!==undefined)headers.set(k,Array.isArray(v)?v.join(','):v);headers.delete('cf-connecting-ip');let ip=req.socket.remoteAddress||'';if(process.env.TRUST_PROXY==='1'){const value=req.headers['x-forwarded-for'];if(typeof value==='string')ip=value.split(',').at(-1).trim();}headers.set('cf-connecting-ip',ip);return headers;}
+function urlFor(req){const base=process.env.PUBLIC_BASE_URL||`http://localhost:${port}`;const u=new URL(base);if(process.env.ROUTING_MODE==='subdomain'&&req.headers.host)u.host=req.headers.host;return new URL(req.url,u).toString();}
+const server=http.createServer(async(req,res)=>{
+ try{const size=Number(req.headers['content-length']||0);if(size>maxBody){res.writeHead(413);res.end('Body too large');return;}
+ const chunks=[];let bytes=0;for await(const chunk of req){bytes+=chunk.length;if(bytes>maxBody){res.writeHead(413);res.end('Body too large');return;}chunks.push(chunk);}
+ const method=req.method||'GET';const request=new Request(urlFor(req),{method,headers:headersFor(req),...(method==='GET'||method==='HEAD'?{}:{body:Buffer.concat(chunks)})});const response=await app.fetch(request);
+ if(response.status===101){res.writeHead(426);res.end('Upgrade required');return;}res.writeHead(response.status,Object.fromEntries(response.headers));if(method==='HEAD'||!response.body){res.end();return;}await pipeline(Readable.fromWeb(response.body),res);
+ }catch(e){console.error('request failed',e);if(!res.headersSent)res.writeHead(500,{'content-type':'application/json'});if(!res.destroyed)res.end(JSON.stringify({error:'internal_server_error'}));}
+});
+server.on('upgrade',async(req,socket,head)=>{try{const response=await app.fetch(new Request(urlFor(req),{headers:headersFor(req)}));if(response.status===101&&response.webSocket){upgradeSocket(req,socket,head,response,app.hub);}else{const body=await response.text();socket.end(`HTTP/1.1 ${response.status} Error\r\nContent-Length: ${Buffer.byteLength(body)}\r\nConnection: close\r\n\r\n${body}`);}}catch(e){console.error('upgrade failed',e);socket.end('HTTP/1.1 500 Error\r\nConnection: close\r\n\r\n');}});
+server.requestTimeout=30000;server.headersTimeout=15000;server.listen(port,'0.0.0.0',()=>console.log(JSON.stringify({event:'listening',port,migrations:app.migrationCount,storage:app.dataDir})));
+const sweepTimer=setInterval(()=>app.scheduled(),300000);sweepTimer.unref();
+let shuttingDown=false;function shutdown(){if(shuttingDown)return;shuttingDown=true;clearInterval(sweepTimer);for(const ws of app.hub.ctx.getWebSockets())ws.close(1001,'Server restarting');server.close(()=>{app.close();process.exit(0);});setTimeout(()=>process.exit(1),10000).unref();}process.on('SIGTERM',shutdown);process.on('SIGINT',shutdown);
