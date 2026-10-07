@@ -19,12 +19,17 @@ export function mask(value) {
   return `${s.slice(0, 4)}…${s.slice(-2)}<${s.length} chars>`;
 }
 
+const JWT_ANYWHERE = /eyJ[\w-]+\.[\w-]+\.[\w-]*/g;
 export function redactObject(obj) {
   const out = {};
   for (const [k, v] of Object.entries(obj || {})) {
-    if (SENSITIVE.test(k)) out[k] = mask(v);
-    else if (typeof v === 'string' && /^eyJ[\w-]+\.[\w-]+\.[\w-]*$/.test(v)) out[k] = mask(v); // JWT em qualquer campo
-    else out[k] = typeof v === 'string' && v.length > 300 ? v.slice(0, 300) + `…<${v.length} chars>` : v;
+    if (k.trim().startsWith('{')) { // JSON inteiro chegou como NOME de parâmetro (visto no cliente 20230414)
+      try { out['<json-in-key>'] = redactObject(JSON.parse(k)); continue; } catch { /* segue como chave comum */ }
+    }
+    const key = k.replace(JWT_ANYWHERE, (m) => mask(m));
+    if (SENSITIVE.test(k)) out[key] = mask(v);
+    else if (typeof v === 'string' && /^eyJ[\w-]+\.[\w-]+\.[\w-]*$/.test(v)) out[key] = mask(v); // JWT em qualquer campo
+    else out[key] = typeof v === 'string' && v.length > 300 ? v.slice(0, 300) + `…<${v.length} chars>` : v;
   }
   return out;
 }
@@ -48,7 +53,7 @@ const textual = (ct) => /json|x-www-form-urlencoded|text\//i.test(ct || '');
 function parseBodyText(text, ct) {
   if (!text) return '';
   try {
-    if (/json/i.test(ct)) return redactObject(JSON.parse(text));
+    if (/json/i.test(ct) || text.trim().startsWith('{')) return redactObject(JSON.parse(text));
     if (/x-www-form-urlencoded/i.test(ct)) return redactObject(Object.fromEntries(new URLSearchParams(text)));
   } catch { /* cai para texto cru truncado */ }
   return text.length > 500 ? text.slice(0, 500) + `…<${text.length} chars>` : text;
@@ -108,41 +113,80 @@ export function withRequestLog(inner, { secret }) {
 }
 
 // ---------------------------------------------------------------------------
-// Photon Custom Authentication — rota de TRACE.
+// Photon Custom Authentication — POST|GET /auth/photon
 //
-// Quem chama esta URL é o Photon Cloud (configurada no painel do Photon), não o
-// cliente. A FORMA DA RESPOSTA abaixo (ResultCode/UserId/Message) é o formato
-// documentado pelo Photon para webhooks de Custom Authentication.
+// Formato observado no cliente 20230414: JSON { accountId, accessToken } com o JWT de
+// acesso do jogo (o mesmo de /auth/connect/token, amr=cached_login). O corpo pode vir
+// rotulado como formulário; por isso o JSON é tentado ANTES de qualquer parser de form.
+// A identidade é SEMPRE o `sub` do JWT validado. Esta rota nunca cria conta, nunca emite
+// outro token e nunca altera presença/instância.
 //
-// UNKNOWN / REQUIRES CLIENT TRACE:
-//   - Em qual parâmetro (query, form, JSON ou header) o build 20230414 envia o token.
-//     Por isso o código procura QUALQUER valor com formato de JWT e registra a origem.
-//   - Se o cliente envia região/sala como parâmetros de autenticação.
-//   - Se o Photon do jogo exige Nickname/AuthCookie na resposta.
+// Formato da resposta (ResultCode/UserId/Message) é o documentado pelo Photon para
+// Custom Authentication.
+// UNKNOWN / REQUIRES CLIENT TRACE: se o Photon do jogo exige Nickname/AuthCookie.
 // ---------------------------------------------------------------------------
 const JWT_SHAPE = /^eyJ[\w-]+\.[\w-]+\.[\w-]*$/;
+
+function parseBody(text, ct) {
+  const t = text.trim();
+  if (!t) return {};
+  if (t.startsWith('{') || /json/i.test(ct)) {
+    try { const j = JSON.parse(t); if (j && typeof j === 'object' && !Array.isArray(j)) return j; } catch { /* tenta como form */ }
+  }
+  return Object.fromEntries(new URLSearchParams(text));
+}
 
 export async function photonAuth(request, { db, secret }) {
   const url = new URL(request.url);
   const ct = request.headers.get('content-type') || '';
-  const params = { ...Object.fromEntries(url.searchParams) };
-  if (request.method !== 'GET' && request.method !== 'HEAD') {
-    const text = (await request.text().catch(() => '')).slice(0, 16384);
-    try {
-      if (/json/i.test(ct)) Object.assign(params, JSON.parse(text));
-      else if (text) Object.assign(params, Object.fromEntries(new URLSearchParams(text)));
-    } catch { /* corpo ilegível: segue só com a query */ }
+  const queryObj = Object.fromEntries(url.searchParams);
+  let bodyObj = {};
+  if (request.method !== 'GET' && request.method !== 'HEAD') bodyObj = parseBody((await request.text().catch(() => '')).slice(0, 16384), ct);
+
+  // Procura um campo (sem diferenciar maiúsculas) no corpo e depois na query.
+  const field = (name) => {
+    for (const [label, o] of [['body', bodyObj], ['query', queryObj]])
+      for (const k of Object.keys(o)) if (k.toLowerCase() === name.toLowerCase() && o[k] != null && o[k] !== '' && typeof o[k] !== 'object') return { value: String(o[k]), source: `${label}:${k}` };
+    return null;
+  };
+
+  let accessToken = null, tokenSource = null, claimedAccountId = null;
+  const direct = field('accessToken');
+  if (direct) { accessToken = direct.value; tokenSource = direct.source; }
+  const claimed = field('accountId');
+  if (claimed) claimedAccountId = claimed.value;
+
+  const authorization = request.headers.get('authorization') || '';
+  if (!accessToken && /^bearer /i.test(authorization)) { accessToken = authorization.slice(7).trim(); tokenSource = 'authorization'; }
+
+  // Formato C: JSON inteiro como NOME de parâmetro, valor vazio.
+  if (!accessToken || claimedAccountId == null) {
+    for (const o of [bodyObj, queryObj]) for (const key of Object.keys(o)) {
+      if (!key || !key.trim().startsWith('{')) continue;
+      try {
+        const parsed = JSON.parse(key);
+        if (parsed && typeof parsed === 'object') {
+          if (!accessToken && parsed.accessToken) { accessToken = String(parsed.accessToken); tokenSource = 'photon_json_key'; }
+          if (claimedAccountId == null && parsed.accountId != null) claimedAccountId = String(parsed.accountId);
+        }
+      } catch { /* não interrompe o restante */ }
+    }
   }
 
-  let token = null; let tokenSource = null;
-  const bearer = request.headers.get('authorization');
-  if (bearer && /^bearer /i.test(bearer) && JWT_SHAPE.test(bearer.slice(7))) { token = bearer.slice(7); tokenSource = 'header:authorization'; }
-  if (!token) for (const [k, v] of Object.entries(params)) if (typeof v === 'string' && JWT_SHAPE.test(v)) { token = v; tokenSource = `param:${k}`; break; }
+  // Último recurso (comportamento anterior): qualquer valor com formato de JWT.
+  if (!accessToken) for (const o of [bodyObj, queryObj]) for (const [k, v] of Object.entries(o))
+    if (!accessToken && typeof v === 'string' && JWT_SHAPE.test(v)) { accessToken = v; tokenSource = `param:${k}`; }
 
-  const region = process.env.PHOTON_REGION || 'us';
+  const clientRegion = field('region') || field('photonRegion');
+  const region = clientRegion ? clientRegion.value : (process.env.PHOTON_REGION || 'us');
   const appIds = ['PHOTON_REALTIME_APP_ID', 'PHOTON_VOICE_APP_ID', 'PHOTON_CHAT_APP_ID'].map((n) => process.env[n]).filter(Boolean);
-  const log = { method: request.method, query: queryOf(url), params: redactObject(params), tokenSource: tokenSource || 'NOT FOUND', region };
-  if (enabled('debug')) log.headers = relevantHeaders(request.headers);
+  const log = {
+    method: request.method, query: queryOf(url), params: redactObject({ ...queryObj, ...bodyObj }),
+    account: '<unknown>', tokenSource: tokenSource || 'NOT FOUND', tokenValid: false, sub: '<none>',
+    accountIdClaimed: claimedAccountId ?? '<none>',
+    region, regionSource: clientRegion ? `client(${clientRegion.source})` : 'server-config',
+  };
+  if (enabled('debug')) { log.headers = relevantHeaders(request.headers); log.contentType = ct || '<none>'; }
 
   const finish = (resultCode, message, extra = {}) => {
     if (enabled('info')) {
@@ -156,19 +200,27 @@ export async function photonAuth(request, { db, secret }) {
     return Response.json(payload);
   };
 
-  if (!token) return finish(3, 'no JWT-shaped credential found in query, body or Authorization header');
+  if (!accessToken) return finish(3, 'no accessToken/JWT found in body, query, Authorization header or JSON-in-key');
 
   let claims;
-  try { claims = await verify(token, secret); } catch (e) { return finish(2, `token rejected: ${e.message}`); }
+  try { claims = await verify(accessToken, secret); } catch (e) { return finish(2, `token rejected: ${e.message}`); }
+  log.tokenValid = true; // assinatura e expiração conferem
+  log.sub = claims.sub ?? '<missing>';
   const accountId = Number(claims.sub);
-  if (!Number.isSafeInteger(accountId) || accountId < 1) return finish(2, 'token has no valid sub');
+  if (claims.sub == null || !Number.isSafeInteger(accountId) || accountId < 1) { log.tokenValid = false; return finish(2, 'token has no valid sub'); }
+  log.account = accountId;
+  if (claimedAccountId != null && String(claimedAccountId) !== String(accountId)) return finish(2, 'accountId does not match token sub', { UserId: accountId });
+
   const aud = typeof claims.aud === 'string' ? claims.aud : '';
-  if (appIds.length > 0 && !appIds.includes(aud)) return finish(2, 'token audience is not a configured Photon AppId', { AppId: mask(aud) });
+  const audKind = aud && appIds.includes(aud) ? 'photon-appid' : (claims.client_id === 'recroom' ? 'game-access-token' : 'other');
+  const base = { UserId: accountId, AudKind: audKind, AppId: audKind === 'photon-appid' ? mask(aud) : (appIds[0] ? mask(appIds[0]) : '<none configured>'), TokenVer: claims['rn.ver'], TokenAmr: claims.amr, Token: '<redacted>' };
+
+  // Mesma consulta de /accounts/account/me: somente leitura, nunca cria conta.
   const account = await getAccount(db, accountId);
-  if (!account) return finish(2, 'account not found', { UserId: accountId });
+  if (!account) return finish(2, 'account not found (no account is created by this route)', base);
   const presence = await getPresence(db, accountId).catch(() => null);
   return finish(1, '', {
-    AppId: aud ? mask(aud) : '<none configured>', UserId: accountId, Username: account.username, Token: '<redacted>',
+    ...base, Username: account.username,
     Room: presence?.roomInstance?.photonRoomId ?? '<not in a room>', RoomInstanceId: presence?.roomInstance?.roomInstanceId,
   });
 }
